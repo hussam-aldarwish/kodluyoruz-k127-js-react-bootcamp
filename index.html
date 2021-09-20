@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movies App</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <script src="js/script.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movies App</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <section id="title" class="container">
+    <h1>Movie List</h1>
+  </section>
+  <section id="search" class="container">
+    <form class="searchbar" action="javascript:handleSearch()">
+      <input id="search_input" class="search_input" type="search" placeholder="Search ...">
+      <button class="search_icon" type="submit">🔍</button>
+    </form>
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+
 </html>
