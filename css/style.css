@@ -1,3 +1,4 @@
+/* Global Rules */
 *,
 ::after,
 ::before {
@@ -26,6 +27,7 @@ a {
   justify-content: end;
 }
 
+/* Title Section Rules */
 #title {
   margin-top: 2rem;
 }
@@ -34,6 +36,7 @@ a {
   justify-content: end;
 }
 
+/* Search Section Rules */
 #search .searchbar {
   display: flex;
   margin-inline-end: 0.5rem;
@@ -87,6 +90,7 @@ a {
   }
 }
 
+/* Sort Section Rules */
 #sort {
   margin-top: 1rem;
   justify-content: center;
@@ -115,6 +119,7 @@ a {
   color: green;
 }
 
+/* Movies Section Rules */
 #movies {
   margin-top: 1rem;
   flex-wrap: wrap;
@@ -176,6 +181,7 @@ a {
   margin: -1rem -1rem 0.6rem -1rem;
 }
 
+/* Pagination Section Rules */
 #pagination {
   margin-top: 1rem;
   justify-content: center;
@@ -199,6 +205,7 @@ a {
 #pagination li a:hover:not(.active) {
   background-color: #ddd;
 }
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .container {
@@ -223,6 +230,7 @@ a {
   }
 }
 
+/* Copy Right Section Rules */
 #copy-right {
   margin-top: 1rem;
   padding-top: 1rem;

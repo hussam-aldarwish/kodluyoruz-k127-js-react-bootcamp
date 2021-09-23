@@ -10,9 +10,13 @@
 </head>
 
 <body>
+
+  <!--Title Section-->
   <section class="container justify-content-center" id="title">
     <h1>Movie List</h1>
   </section>
+
+  <!--Search Section-->
   <section id="search" class="container">
     <form class="searchbar" action="javascript:handleSearch()">
       <input id="search_input" class="search_input" type="search" placeholder="Search ...">
@@ -20,6 +24,7 @@
     </form>
   </section>
 
+  <!--Sort Section-->
   <section id="sort" class="container justify-content-center">
     <select id="sort-category">
       <option value=""></option>
@@ -41,15 +46,17 @@
     <button class="clear-btn" onclick="CancelSorting()">Clear</button>
   </section>
 
-
+  <!--Movies list Section-->
   <section class="container" id="movies">
   </section>
 
+  <!--Pagination Section-->
   <section class="container" id="pagination">
     <ul id="pagination">
     </ul>
   </section>
 
+  <!--Copy Right  Section-->
   <section id="copy-right" class="container justify-content-center">
     <span>
       Eğitmen: <a href="https://github.com/enesozturk">Enes Öztürk</a><br>
