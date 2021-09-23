@@ -5,12 +5,12 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Movies App</title>
+  <title>Movies App - HUSSAM ALDARWISH</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <section class="container" id="title">
+  <section class="container justify-content-center" id="title">
     <h1>Movie List</h1>
   </section>
   <section id="search" class="container">
@@ -20,7 +20,44 @@
     </form>
   </section>
 
+  <section id="sort" class="container justify-content-center">
+    <select id="sort-category">
+      <option value=""></option>
+      <option value="popularity">Popularity</option>
+      <option value="release_date">Release Date</option>
+      <option value="revenue">Revenue</option>
+      <option value="primary_release_date">Primary Release Date</option>
+      <option value="original_title">Original Title</option>
+      <option value="vote_average">Vote Average</option>
+      <option value="vote_count">Vote Count</option>
+    </select>
+    <div id="sort-dir" class="radio-btns">
+      <input type="radio" id="sort-asc" name="sort" value="asc">
+      <label for="sort-asc">Asc</label>
+      <input type="radio" id="sort-desc" name="sort" value="desc" checked>
+      <label for="sort-desc">Desc</label>
+    </div>
+    <button class="sort-btn" onclick="Sort()">Sort</button>
+    <button class="clear-btn" onclick="CancelSorting()">Clear</button>
+  </section>
+
+
   <section class="container" id="movies">
+  </section>
+
+  <section class="container" id="pagination">
+    <ul id="pagination">
+    </ul>
+  </section>
+
+  <section id="copy-right" class="container justify-content-center">
+    <span>
+      Eğitmen: <a href="https://github.com/enesozturk">Enes Öztürk</a><br>
+      Tahnks to <a href="https://www.kodluyoruz.org/">KODLUYORUZ</a><br>
+      <a href="https://github.com/kodluyoruz-js-react-bootcamp-127/course/blob/master/homework-1.md">127. Kodluyoruz
+        bootcamp (JS&React) : Homework-1<br>
+        <a href="mailto:hussam.aldarwish@hotmail.com">HUSSAM ALDADRWISH</a> Tarafından Yapılmıştır
+    </span>
   </section>
 
   <script src="js/script.js"></script>
