@@ -8,7 +8,7 @@ body {
   overflow-x: hidden;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -19,10 +19,10 @@ a{
   display: flex;
 }
 
-.justify-content-center{
+.justify-content-center {
   justify-content: center;
 }
-.justify-content-end{
+.justify-content-end {
   justify-content: end;
 }
 
@@ -87,33 +87,31 @@ a{
   }
 }
 
-
-#sort{
+#sort {
   margin-top: 1rem;
   justify-content: center;
   padding: 0.5rem;
+  flex-wrap: wrap;
 }
-#sort >*{
+#sort > * {
   padding: 0.5rem;
-  margin: auto 0.2rem;
+  margin: 0.2rem 0.2rem;
   background-color: white;
   border-radius: 8px;
 }
 
-#sort radio-btns{
+#sort radio-btns {
   padding: 0px;
 }
 
-
-#sort button{
+#sort button {
   padding: 0.5rem 1rem;
-  cursor: pointer;;
-
+  cursor: pointer;
 }
-#sort button.sort-btn{
+#sort button.sort-btn {
   color: blue;
 }
-#sort button.clear-btn{
+#sort button.clear-btn {
   color: green;
 }
 
@@ -155,18 +153,15 @@ a{
   height: max-content;
 }
 
-#movies .col .movie-item .details .rate.good{
+#movies .col .movie-item .details .rate.good {
   color: green;
 }
-#movies .col .movie-item .details .rate.moderate{
+#movies .col .movie-item .details .rate.moderate {
   color: purple;
 }
-#movies .col .movie-item .details .rate.low{
- color: red;
-
+#movies .col .movie-item .details .rate.low {
+  color: red;
 }
-
-
 
 #movies .col .movie-item .year {
   color: #898989;
@@ -196,7 +191,6 @@ a{
   text-decoration: none;
   padding: 5px 10px;
   color: #000;
-
 }
 #pagination li a.active {
   background-color: #0275d8;
@@ -229,12 +223,12 @@ a{
   }
 }
 
-#copy-right{
+#copy-right {
   margin-top: 1rem;
   padding-top: 1rem;
   text-align: center;
   border-top: 1px solid black;
 }
-#copy-right span{
-  line-height:1.5rem ;
+#copy-right span {
+  line-height: 1.5rem;
 }
