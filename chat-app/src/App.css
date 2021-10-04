@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+.container[theme="dark"] {
+  background-color: #6a6a6a;
+  color: white;
+}
