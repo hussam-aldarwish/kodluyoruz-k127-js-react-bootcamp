@@ -12,14 +12,14 @@ function App() {
     if (user) {
       user = JSON.parse(user);
       return user;
-    } else return null;
+    }
   });
   const [selectedUser, setSelectedUser] = useState(() => {
     let selectedUser = localStorage.getItem("selectedUser");
     if (selectedUser) {
       selectedUser = JSON.parse(selectedUser);
       return selectedUser;
-    } else return null;
+    }
   });
   const [users, setUsers] = useState(() => {
     let users = localStorage.getItem("users");
@@ -46,13 +46,7 @@ function App() {
 
   function selectUser(id) {
     const selectedUser = users.find((user) => user.id === id);
-    if (selectedUser) {
-      setSelectedUser(selectedUser);
-      const updatedUsers = users.map((user) =>
-        user.id === selectedUser.id ? selectedUser : user
-      );
-      setUsers(updatedUsers);
-    }
+    if (selectedUser) setSelectedUser(selectedUser);
   }
 
   function sendMessage(text) {
@@ -91,10 +85,13 @@ function App() {
     if (selectedUser) {
       let selectedUserJson = JSON.stringify(selectedUser);
       localStorage.setItem("selectedUser", selectedUserJson);
+      setUsers(
+        users.map((user) => (user.id === selectedUser.id ? selectedUser : user))
+      );
     } else {
       localStorage.removeItem("selectedUser");
     }
-  }, [selectedUser]);
+  }, [selectedUser]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (users) {
@@ -107,6 +104,7 @@ function App() {
 
   useEffect(() => {
     if (theme) localStorage.setItem("theme", theme);
+    else localStorage.removeItem("theme");
   }, [theme]);
 
   return (
