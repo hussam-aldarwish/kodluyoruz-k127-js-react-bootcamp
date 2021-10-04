@@ -29,6 +29,10 @@ function App() {
     const selectedUser = users.find((user) => user.id === id);
     if (selectedUser) {
       setSelectedUser(selectedUser);
+      const updatedUsers = users.map((user) =>
+        user.id === selectedUser.id ? selectedUser : user
+      );
+      setUsers(updatedUsers);
     }
   }
 
@@ -63,14 +67,10 @@ function App() {
     if (selectedUser) {
       let selectedUserJson = JSON.stringify(selectedUser);
       localStorage.setItem("selectedUser", selectedUserJson);
-      const updatedUsers = users.map((user) =>
-        user.id === selectedUser.id ? selectedUser : user
-      );
-      setUsers(updatedUsers);
     } else {
       localStorage.removeItem("selectedUser");
     }
-  }, [selectedUser]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [selectedUser]);
 
   useEffect(() => {
     if (users) {
@@ -96,12 +96,12 @@ function App() {
     let selectedUser = localStorage.getItem("selectedUser");
     if (selectedUser) {
       selectedUser = JSON.parse(selectedUser);
-      setUser(selectedUser);
+      setSelectedUser(selectedUser);
     }
     let users = localStorage.getItem("users");
     if (users) {
       users = JSON.parse(users);
-      setUser(users);
+      setUsers(users);
     }
     // load theme context related properties
     const theme = localStorage.getItem("theme");
@@ -110,13 +110,17 @@ function App() {
   }, []);
 
   return (
-    <ThemeContext value={(theme, toggleTheme)}>
+    <ThemeContext.Provider value={(theme, toggleTheme)}>
       <UserContext.Provider
         value={
-          (user, selectedUser, user, login, logout, selectUser, sendMessage)
+          (user, selectedUser, users, login, logout, selectUser, sendMessage)
         }
-      ></UserContext.Provider>
-    </ThemeContext>
+      >
+        <div className="container" theme={theme}>
+          <p>App!</p>
+        </div>
+      </UserContext.Provider>
+    </ThemeContext.Provider>
   );
 }
 
