@@ -41,6 +41,7 @@ function App() {
 
   function logout() {
     setUser(null);
+    setUsers(null);
   }
 
   function selectUser(id) {
