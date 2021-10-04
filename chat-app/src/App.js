@@ -7,9 +7,27 @@ import { ThemeContext } from "./contexts/theme";
 
 function App() {
   // user context related states
-  const [user, setUser] = useState();
-  const [selectedUser, setSelectedUser] = useState();
-  const [users, setUsers] = useState(mock);
+  const [user, setUser] = useState(() => {
+    let user = localStorage.getItem("user");
+    if (user) {
+      user = JSON.parse(user);
+      return user;
+    } else return null;
+  });
+  const [selectedUser, setSelectedUser] = useState(() => {
+    let selectedUser = localStorage.getItem("selectedUser");
+    if (selectedUser) {
+      selectedUser = JSON.parse(selectedUser);
+      return selectedUser;
+    } else return null;
+  });
+  const [users, setUsers] = useState(() => {
+    let users = localStorage.getItem("users");
+    if (users) {
+      users = JSON.parse(users);
+      return users;
+    } else return mock;
+  });
 
   function login(username, first_name, last_name) {
     const user = {
@@ -47,7 +65,12 @@ function App() {
   }
 
   // theme related states
-  const [theme, setTheme] = useState();
+  const [theme, setTheme] = useState(() => {
+    let theme = localStorage.getItem("theme");
+    if (theme) {
+      return theme;
+    } else return "light";
+  });
 
   function toggleTheme() {
     setTheme(theme === "light" ? "dark" : "light");
@@ -84,30 +107,6 @@ function App() {
   useEffect(() => {
     if (theme) localStorage.setItem("theme", theme);
   }, [theme]);
-
-  // On load
-  useEffect(() => {
-    // load user context related properties
-    let user = localStorage.getItem("user");
-    if (user) {
-      user = JSON.parse(user);
-      setUser(user);
-    }
-    let selectedUser = localStorage.getItem("selectedUser");
-    if (selectedUser) {
-      selectedUser = JSON.parse(selectedUser);
-      setSelectedUser(selectedUser);
-    }
-    let users = localStorage.getItem("users");
-    if (users) {
-      users = JSON.parse(users);
-      setUsers(users);
-    }
-    // load theme context related properties
-    const theme = localStorage.getItem("theme");
-    if (theme) setTheme(theme);
-    else setTheme("light");
-  }, []);
 
   return (
     <ThemeContext.Provider value={(theme, toggleTheme)}>
