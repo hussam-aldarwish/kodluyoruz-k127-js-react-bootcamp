@@ -4,6 +4,7 @@ import { users as mock } from "./mocks/mock-users.json";
 import { v4 as uuid } from "uuid";
 import { UserContext } from "./contexts/user";
 import { ThemeContext } from "./contexts/theme";
+import Routes from "./routes";
 
 function App() {
   // user context related states
@@ -115,7 +116,7 @@ function App() {
         }
       >
         <div className="container" theme={theme}>
-          <p>App!</p>
+          <Routes />
         </div>
       </UserContext.Provider>
     </ThemeContext.Provider>
