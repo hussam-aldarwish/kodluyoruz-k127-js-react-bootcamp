@@ -13,7 +13,6 @@ export default function LoginForm() {
   const { login } = useLogin();
 
   function submitForm(data) {
-    console.log(data);
     login(data.userName, data.firstName, data.lastName);
   }
   return (

@@ -4,7 +4,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Chat from "./pages/login";
+import Chat from "./pages/chat";
+import Login from "./pages/login";
 
 function Routes() {
   return (
@@ -14,10 +15,10 @@ function Routes() {
           <Redirect to="/chat" />
         </Route>
         <Route path="/login">
-          <Chat />
+          <Login />
         </Route>
-        <Route path="/chat">
-          <p>Chat!</p>
+        <Route path={["/chat", "/chat/:userid"]} exact>
+          <Chat />
         </Route>
         <Route path="/user/:userid/details">
           <p>User Details!</p>

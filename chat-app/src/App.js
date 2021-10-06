@@ -48,6 +48,7 @@ function App() {
   function selectUser(id) {
     const selectedUser = users.find((user) => user.id === id);
     if (selectedUser) setSelectedUser(selectedUser);
+    else setSelectedUser(null);
   }
 
   function sendMessage(text) {
@@ -58,6 +59,9 @@ function App() {
         { id: uuid(), text: text, sender: user.id },
       ],
     });
+    setUsers(
+      users.map((user) => (user.id === selectedUser.id ? selectedUser : user))
+    );
   }
 
   // theme related states
@@ -86,13 +90,10 @@ function App() {
     if (selectedUser) {
       let selectedUserJson = JSON.stringify(selectedUser);
       localStorage.setItem("selectedUser", selectedUserJson);
-      setUsers(
-        users.map((user) => (user.id === selectedUser.id ? selectedUser : user))
-      );
     } else {
       localStorage.removeItem("selectedUser");
     }
-  }, [selectedUser]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [selectedUser]);
 
   useEffect(() => {
     if (users) {
