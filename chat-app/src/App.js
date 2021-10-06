@@ -111,9 +111,15 @@ function App() {
   return (
     <ThemeContext.Provider value={(theme, toggleTheme)}>
       <UserContext.Provider
-        value={
-          (user, selectedUser, users, login, logout, selectUser, sendMessage)
-        }
+        value={{
+          user,
+          selectedUser,
+          users,
+          login,
+          logout,
+          selectUser,
+          sendMessage,
+        }}
       >
         <div className="container" theme={theme}>
           <Routes />
