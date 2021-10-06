@@ -15,9 +15,10 @@ export default function SideNav() {
           .includes(filter.toLowerCase())
       );
       setsearchResults(friendsList);
-      if (friendsList) selectUser(friendsList[0]);
+      selectUser(friendsList[0]?.id);
     } else {
       setsearchResults(users);
+      selectUser(null);
     }
   }
   return (
