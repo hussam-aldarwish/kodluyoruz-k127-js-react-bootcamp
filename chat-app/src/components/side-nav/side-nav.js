@@ -1,7 +1,10 @@
 import { useState } from "react";
-import SearchUser from "../search-user";
 import "./side-nav.css";
 import useLogin from "../../hooks/user";
+
+import SearchUser from "../search-user";
+import ListUser from "../list-user";
+import Settings from "../settings";
 
 export default function SideNav() {
   const { users, selectUser } = useLogin();
@@ -24,6 +27,8 @@ export default function SideNav() {
   return (
     <div className="side-nav">
       <SearchUser handler={search} />
+      <ListUser friendsList={searchResults} />
+      <Settings />
     </div>
   );
 }

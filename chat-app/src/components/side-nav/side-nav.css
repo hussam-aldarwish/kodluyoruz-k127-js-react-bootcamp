@@ -1,5 +1,10 @@
-.side-nav{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #f3f3f3;
+  width: 100%;
+}
+[theme="dark"] .side-nav {
+  background-color: #6a6a6a;
 }

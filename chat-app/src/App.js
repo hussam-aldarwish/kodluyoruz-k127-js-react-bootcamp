@@ -42,7 +42,8 @@ function App() {
 
   function logout() {
     setUser(null);
-    setUsers(null);
+    setSelectedUser(null);
+    setUsers(mock);
   }
 
   function selectUser(id) {
@@ -110,7 +111,7 @@ function App() {
   }, [theme]);
 
   return (
-    <ThemeContext.Provider value={(theme, toggleTheme)}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <UserContext.Provider
         value={{
           user,
