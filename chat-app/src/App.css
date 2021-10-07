@@ -10,6 +10,11 @@ ul {
   padding: 0px;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .container {
   display: flex;
   height: 100vh;

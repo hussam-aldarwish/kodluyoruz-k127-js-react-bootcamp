@@ -3,7 +3,8 @@
   flex-direction: column;
   flex: 1;
   background-color: #f3f3f3;
-  width: 100%;
+  overflow: hidden;
+  border-inline-end: 1px solid #b3b3b3;
 }
 [theme="dark"] .side-nav {
   background-color: #6a6a6a;

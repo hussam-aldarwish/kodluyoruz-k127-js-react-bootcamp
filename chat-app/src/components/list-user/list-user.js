@@ -11,25 +11,27 @@ export default function ListUser(props) {
   }
   return (
     <ul className="list-user">
-      {friendsList
-        ? friendsList.map((f) => (
-            <li
-              key={f.id}
-              className={f.id === selectedUser?.id ? "active" : null}
-              onClick={() => selectUser(f.id)}
-            >
-              <div className="user-img">
-                <i className="fas fa-user-circle fa-3x"></i>
-              </div>
-              <div className="user-detail">
-                <span className="user-name">
-                  {f.first_name} {f.last_name}
-                </span>
-                <span className="last-msg">{lastmessage(f.id)}</span>
-              </div>
-            </li>
-          ))
-        : null}
+      {friendsList.length ? (
+        friendsList.map((f) => (
+          <li
+            key={f.id}
+            className={f.id === selectedUser?.id ? "active" : null}
+            onClick={() => selectUser(f.id)}
+          >
+            <div className="user-img">
+              <i className="fas fa-user-circle fa-3x"></i>
+            </div>
+            <div className="user-detail">
+              <span className="user-name">
+                {f.first_name} {f.last_name}
+              </span>
+              <span className="last-msg">{lastmessage(f.id)}</span>
+            </div>
+          </li>
+        ))
+      ) : (
+        <li className="not-found">User Not Found!</li>
+      )}
     </ul>
   );
 }

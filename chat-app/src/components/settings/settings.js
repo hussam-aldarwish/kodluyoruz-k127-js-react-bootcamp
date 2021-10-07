@@ -10,7 +10,7 @@ export default function Settings() {
   return (
     <div className="settings-container">
       <Button onClick={() => toggleTheme()}>
-        {theme == "dark" ? (
+        {theme === "dark" ? (
           <i className="fas fa-sun fa-2x"></i>
         ) : (
           <i className="fas fa-moon fa-2x"></i>
