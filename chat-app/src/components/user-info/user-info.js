@@ -14,18 +14,26 @@ export default function UserInfo() {
         <i className="fas fa-user-circle fa-6x"></i>
       </div>
       <div className="name">
-        {`${selectedUser.first_name} ${selectedUser.last_name}`}
+        {selectedUser
+          ? `${selectedUser.first_name} ${selectedUser.last_name}`
+          : "Please select user to view user details!"}
       </div>
-      <div className="last-seen body1">Last seen 2 hours ago.</div>
-      <div className="actions">
-        <div className="secondary">
-          <i className="fas fa-envelope-open-text fa-2x"></i>
+      {selectedUser ? (
+        <div className="last-seen body1">Last seen 2 hours ago.</div>
+      ) : null}
+      {selectedUser ? (
+        <div className="actions">
+          <div className="secondary">
+            <i className="fas fa-envelope-open-text fa-2x"></i>
+          </div>
+          <div className="secondary">
+            <i className="fas fa-phone fa-2x"></i>
+          </div>
+          <div className="secondary">
+            <i className="fas fa-video fa-2x"></i>
+          </div>
         </div>
-        <div className="secondary">
-          <i className="fas fa-phone fa-2x"></i>
-        </div>
-        <div className="secondary"><i className="fas fa-video fa-2x"></i></div>
-      </div>
+      ) : null}
     </div>
   );
 }

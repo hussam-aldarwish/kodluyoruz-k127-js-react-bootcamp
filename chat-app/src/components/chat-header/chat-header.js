@@ -16,10 +16,7 @@ export default function ChatHeader() {
       </div>
 
       {selectedUser ? (
-        <Link
-          className="user-info-button"
-          to={`/user/${selectedUser.id}/details`}
-        >
+        <Link className="user-info-button" to={"/user"}>
           ...
         </Link>
       ) : null}

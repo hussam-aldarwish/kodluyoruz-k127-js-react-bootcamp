@@ -21,7 +21,7 @@ function Routes() {
         <Route path={["/chat", "/chat/:userid"]} exact>
           <Chat />
         </Route>
-        <Route path={["/user", "/user/:userid/details"]} >
+        <Route path={["/user", "/user/:userid/details"]} exact>
           <User />
         </Route>
       </Switch>
