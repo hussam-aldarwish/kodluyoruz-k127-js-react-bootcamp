@@ -1,4 +1,6 @@
 .chat-screen-container{
     flex:4;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
