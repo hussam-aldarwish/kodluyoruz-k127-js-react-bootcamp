@@ -1,0 +1,30 @@
+.user-info-container {
+  flex: 4;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-info-container .close-btn {
+  font-size: 30px;
+  align-self: flex-end;
+  margin: 20px 30px;
+}
+
+.user-info-container .name {
+  font-size: 24px;
+}
+
+.user-info-container .actions {
+    display: flex;
+    gap: 16px;
+  }
+  .user-info-container .actions div {
+    padding: 20px 0px;
+    width: 6rem;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+  }

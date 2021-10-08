@@ -18,7 +18,7 @@ export default function ChatHeader() {
       {selectedUser ? (
         <Link
           className="user-info-button"
-          to={`/user/:${selectedUser.id}/details`}
+          to={`/user/${selectedUser.id}/details`}
         >
           ...
         </Link>

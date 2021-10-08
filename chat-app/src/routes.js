@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Chat from "./pages/chat";
 import Login from "./pages/login";
+import User from "./pages/user";
 
 function Routes() {
   return (
@@ -20,8 +21,8 @@ function Routes() {
         <Route path={["/chat", "/chat/:userid"]} exact>
           <Chat />
         </Route>
-        <Route path="/user/:userid/details">
-          <p>User Details!</p>
+        <Route path={["/user", "/user/:userid/details"]} >
+          <User />
         </Route>
       </Switch>
     </Router>
