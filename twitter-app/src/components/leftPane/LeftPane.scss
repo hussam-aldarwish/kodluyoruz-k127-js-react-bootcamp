@@ -1,0 +1,45 @@
+.leftPane {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
+  ul {
+    list-style: none;
+    li {
+      height: 6vh;
+      max-width: max-content;
+      display: flex;
+      align-items: center;
+      font-size: 1.4rem;
+      border-radius: 50px;
+      padding: 0 13px 0 0;
+      cursor: pointer;
+      transition: 0.3s;
+      svg {
+        width: 35px;
+        height: auto;
+        margin-left: 10px;
+        margin-right: 25px;
+        transition: 0.3s;
+      }
+    }
+    li:hover {
+      background: #1c1c1c;
+      color: #e3e3e3;
+
+      svg {
+        background: #fff;
+        color: #000;
+        padding: 5px;
+        border-radius: 35px;
+      }
+    }
+  }
+  header {
+    svg {
+      margin-left: 50px;
+      height: 40px;
+      width: 40px;
+    }
+  }
+}
