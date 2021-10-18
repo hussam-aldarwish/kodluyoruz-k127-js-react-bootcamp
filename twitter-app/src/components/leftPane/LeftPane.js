@@ -1,14 +1,19 @@
 import React from 'react'
-import { BiHomeCircle, BiBookmark, BiSearchAlt } from "react-icons/bi";
+
+import { BiHomeCircle } from "react-icons/bi";
+import { BiBookmark } from "react-icons/bi";
+import { BiSearchAlt } from "react-icons/bi";
 import { IoNotificationsSharp } from "react-icons/io5"
 import { HiOutlineMail } from "react-icons/hi"
-import { RiFileList2Line, RiTwitterFill } from "react-icons/ri"
+import { RiTwitterFill } from "react-icons/ri"
+import { RiFileList2Line } from "react-icons/ri"
+
 import "./LeftPane.scss"
-import Buttun from '../Button/Buttun';
+import Button from '../Button/Buttun';
 export default function LeftPane() {
+
     return (
-        <>
-        
+    <>
         <div className="leftPane">
         <header>
         <RiTwitterFill />
@@ -20,8 +25,9 @@ export default function LeftPane() {
             <li><HiOutlineMail />Messiges</li>
             <li><BiBookmark />Bookmark</li>
             <li><RiFileList2Line />Lists</li>
-            <Buttun />
+            <Button />
         </ul>
+        
         </div>
         </>
     )

@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 import "./Button.scss"
 
-export default function Buttun() {
+export default function Button() {
     return (
         <>
-          <Buttun>
+          <button>
              Twitte
-         </Buttun>   
+         </button>
         </>
     )
 }
