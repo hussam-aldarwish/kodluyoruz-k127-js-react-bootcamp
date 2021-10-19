@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.scss';
 import LeftPane from './components/leftPane/LeftPane';
+import Tweet from './components/Tweet';
 
 function App() {
   return (
-    <div className="App">
-    <LeftPane />
+    <div className="app">
+      <LeftPane />
+      <Tweet />
     </div>
   );
 }

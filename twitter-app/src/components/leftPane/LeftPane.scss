@@ -1,4 +1,6 @@
 .leftPane {
+  flex: 0.3;
+  border-right: 1px solid var(--twitter-background);
   display: flex;
   flex-direction: column;
   align-items: flex-start;

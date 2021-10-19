@@ -1,0 +1,66 @@
+.post{
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--twitter-background);
+    padding-bottom: 10px;
+}
+.post-body{
+    flex: 1;
+    padding: 10px;
+}
+.post-body > img{
+    border-radius: 20px;
+}
+.post-footer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    color: #6E767D;
+}
+.message:hover{
+   color: #1D9BF0;
+   cursor: pointer;
+}
+.retweet:hover{
+    color: rgb(87, 214, 87);
+    cursor: pointer;
+}
+.heart:hover{
+    color: rgb(240, 120, 120);
+    cursor: pointer;
+}
+.share:hover{
+    color: #1D9BF0;
+    cursor: pointer;
+}
+.post-headerText > h3{
+    font-size: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    color: white;
+}
+.post-headerText > h3:hover{
+    text-decoration: underline;
+}
+.username{
+    font-weight: 600;
+    font-size: 12px;
+    color: gray;
+}
+.post-headerDescription{
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: white;
+}
+.post-avatar{
+    padding: 20px;
+}
+.avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.avatar:hover{
+    background-color: #f0f0f0;
+}
