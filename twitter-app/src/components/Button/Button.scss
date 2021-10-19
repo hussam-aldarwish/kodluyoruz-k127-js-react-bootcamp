@@ -1,15 +1,16 @@
+@import '../../App.scss','../leftPane/LeftPane.scss';
+$hoverColor:rgb(0 104 173);
 button{
-    width: auto;
-    cursor: pointer;
-    cursor: pointer;
+    font: $font;
+    cursor:pointer;
     width: 100%;
     height: 38px;
     border-radius: 35px;
     border: none;
-    background: rgb(29, 155, 240) ;
-    color: #fff;
-    transition: 0.3s;
+    background: $color2;
+    color: $fontColor;
+    transition: $transitionNormal;
     &:hover{
-        background: rgb(0 104 173);
+        background: $hoverColor;
     }
 }

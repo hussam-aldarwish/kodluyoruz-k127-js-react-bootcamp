@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+$font:'Gowun Dodum', sans-serif;
+$background:rgb(0, 0, 0);
+$fontColor:#fff;
+
+$transitionfast: 100ms;
+$transitionNormal: 300ms;
+$transitionslow: 1s;
+
 body{
-  font-family:'Gowun Dodum', sans-serif;
-  background: rgb(0, 0, 0);
-  color: #fff;
+  font-family:$font;
+  background:$background;
+  color: $fontColor;
 }

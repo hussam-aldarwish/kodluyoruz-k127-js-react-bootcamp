@@ -4,7 +4,7 @@ import "./Button.scss"
 export default function Button() {
     return (
         <>
-          <button>
+          <button type='button'>
              Twitte
          </button>
         </>
