@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
-$font:'Gowun Dodum', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&display=swap');
+$font:'Karla', sans-serif;
 $background:rgb(0, 0, 0);
 $fontColor:#fff;
 
@@ -9,6 +9,14 @@ $transitionslow: 1s;
 
 body{
   font-family:$font;
+  font-weight: lighter;
   background:$background;
   color: $fontColor;
+  margin: 0;
+  padding: 0;
+}
+.App{
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
 }
