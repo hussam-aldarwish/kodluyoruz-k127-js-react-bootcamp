@@ -1,26 +1,55 @@
-import React from 'react'
-import { BiHomeCircle, BiBookmark, BiSearchAlt } from "react-icons/bi";
-import { IoNotificationsSharp } from "react-icons/io5"
-import { FiMail } from "react-icons/fi"
-import { RiFileList2Line, RiTwitterFill } from "react-icons/ri"
-import "./LeftPane.scss"
+import React from "react";
+import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
+import { FiSearch } from "react-icons/fi";
+import { IoNotificationsOutline } from "react-icons/io5";
+import { FiMail } from "react-icons/fi";
+import { RiTwitterFill } from "react-icons/ri";
+import { HiOutlineUser } from "react-icons/hi";
+
+import "./LeftPane.scss";
+import Button from "../Button/Buttun";
+import HomeIcone from "../icon/HomeIcone";
 export default function LeftPane() {
-    return (
-        <>
-        <div className="leftPane">
+  const [active, setActive] = useState("notActive");
+  const isMobile = useMediaQuery({minWidth: 600})
+  const isTablet = useMediaQuery({ minWidth: 1260 });
+  return (
+    <>
+      <div className="leftPane">
         <header>
-        <RiTwitterFill />
+
         </header>
         <ul>
-            <li><BiHomeCircle />Home</li>
-            <li><BiSearchAlt />Search</li>
-            <li><IoNotificationsSharp />Notifications</li>
-            <li><FiMail />Messiges</li>
-            <li><BiBookmark />Bookmark</li>
-            <li><RiFileList2Line />Lists</li>
-        
+        {isMobile &&
+            <RiTwitterFill className="twitterLogo" />
+        }
+          <li
+            className={`${active && "active"}`}
+            onClick={() => setActive(!active)}
+          >
+            <HomeIcone />
+            {isTablet && <p>Home</p>}
+          </li>
+          <li>
+            <FiSearch />
+            {isTablet && <p>Search</p>}
+          </li>
+          <li>
+            <IoNotificationsOutline />
+            {isTablet && <p>Notifications</p>}
+          </li>
+          <li>
+            <FiMail />
+            {isTablet && <p>Messiges</p>}
+          </li>
+          <li>
+            <HiOutlineUser />
+            {isTablet && <p>Profile</p>}
+          </li>
+          <Button />
         </ul>
-        </div>
-        </>
-    )
+      </div>
+    </>
+  );
 }

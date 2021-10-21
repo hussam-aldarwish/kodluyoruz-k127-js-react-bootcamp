@@ -1,17 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
-body{
-  font-family:'Gowun Dodum', sans-serif;
-  background: rgb(0, 0, 0);
-  color: #fff;
-  --twitter-color: #50b7f5;
-  --twitter-background: #e6ecf0;
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&display=swap");
+$font: "Karla", sans-serif;
+$background: rgb(0, 0, 0);
+$fontColor: #fff;
 
+$transitionfast: 100ms;
+$transitionNormal: 300ms;
+$transitionslow: 1s;
+
+body {
+  font-family: $font;
+  font-weight: lighter;
+  background: $background;
+  color: $fontColor;
+  margin: 0;
+  padding: 0;
 }
-.app{
+.App {
   display: flex;
-  height: 100vh;
-  max-width: 1300px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 10px;
+  width: 100vw;
+  justify-content: space-around;
 }
