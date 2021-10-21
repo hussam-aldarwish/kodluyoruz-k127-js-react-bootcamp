@@ -1,6 +1,8 @@
 @import "../../App.scss";
 $color2: rgb(29, 155, 240);
 .leftPane {
+  position: sticky;
+  top: 0;
   width: 275px;
   height: 100vh;
   display: flex;

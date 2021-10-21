@@ -6,7 +6,12 @@ $fontColor: #fff;
 $transitionfast: 100ms;
 $transitionNormal: 300ms;
 $transitionslow: 1s;
-
+html{
+overflow-x: hidden;
+&:-webkit-scrollbar {
+  width: 0;
+}
+}
 body {
   font-family: $font;
   font-weight: lighter;
@@ -14,9 +19,12 @@ body {
   color: $fontColor;
   margin: 0;
   padding: 0;
+  &:-webkit-scrollbar {
+    width: 0;
+  }
 }
 .App {
   display: flex;
   width: 100vw;
-  justify-content: space-around;
+  justify-content: center;
 }
