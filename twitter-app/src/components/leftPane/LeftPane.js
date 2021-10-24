@@ -21,6 +21,7 @@ export default function LeftPane() {
   const dispatch = useDispatch();
   // ! handle toggleTheme
   // You can use it like this: onClick={()=>handleToggleTheme()}
+  // eslint-disable-next-line
   function handleToggleTheme() {
     dispatch(toggleTheme());
   }
