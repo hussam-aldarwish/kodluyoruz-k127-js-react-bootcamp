@@ -1,6 +1,8 @@
-@import '../../App.scss';
-$color2:rgb(29, 155, 240);
+@import "../../App.scss";
+$color2: rgb(29, 155, 240);
 .leftPane {
+  position: sticky;
+  top: 0;
   width: 275px;
   height: 100vh;
   display: flex;
@@ -15,15 +17,14 @@ $color2:rgb(29, 155, 240);
     list-style: none;
     padding: 0 15px;
     width: auto;
-    
-    .twitterLogo{
+
+    .twitterLogo {
       margin-left: 5px;
       margin-bottom: 20px;
       height: 35px;
       width: 35px;
-
     }
-    
+
     li {
       max-width: max-content;
       display: flex;
@@ -40,17 +41,16 @@ $color2:rgb(29, 155, 240);
         margin-right: 10px;
         transition: $transitionNormal;
       }
-      img{
+      img {
         width: 25px;
         height: auto;
         margin-right: 10px;
         transition: $transitionNormal;
-        
       }
     }
     li:hover {
       font-weight: bold;
-      background: rgba(217, 217, 217,0.1);
+      background: rgba(217, 217, 217, 0.1);
     }
   }
   header {
@@ -60,70 +60,69 @@ $color2:rgb(29, 155, 240);
       width: 40px;
     }
   }
-
-  
 }
-.leftPane{
-  @media only screen and (max-width: 1260px){
+.leftPane {
+  @media only screen and (max-width: 1260px) {
     width: auto;
-    li{
+    li {
       height: 25px !important;
-      img ,svg{
+      img,
+      svg {
         margin-right: 0 !important;
       }
     }
-    button{
+    button {
       width: 45px;
       height: 45px;
     }
   }
   @media only screen and (max-width: 600px) {
-      border-right: none;
-    header{
+    border-right: none;
+    header {
       position: fixed;
       top: 0;
       width: 100%;
-      svg{
+      svg {
         margin: 5px 15px;
       }
       left: 0;
     }
-    ul{
+    ul {
       width: 100%;
       display: flex;
       flex-direction: row;
-      position:fixed;
+      position: fixed;
       bottom: 0;
       margin: 0;
       padding: 5px 15px;
-      justify-content:space-around;
+      justify-content: space-around;
       background: $background;
       border-top: 0.1mm solid #4a4a4a96;
       left: 0;
 
-    
-    li{
-      height: 25px;
-        img{
+      li {
+        height: 25px;
+        img {
           margin-right: 0 !important;
         }
-        svg ,img{
+        svg,
+        img {
           margin: 0;
           width: 25px;
         }
-    }
-    button{
-        position:fixed;
+      }
+      button {
+        position: fixed;
         border-radius: 50%;
         width: 55px;
         height: 55px;
         bottom: 75px;
         right: 20px;
       }
+    }
   }
 }
-}
-.active{
+.active {
   font-weight: bold;
-  background: rgba(217, 217, 217,0.1);
+  background: rgba(217, 217, 217, 0.1);
 }

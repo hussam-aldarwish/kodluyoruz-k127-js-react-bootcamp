@@ -5,6 +5,8 @@
     padding: 0 0 0 15px;
     border-left: 0.1mm solid rgba(217, 217, 217, 0.2);
     .hashContainer{
+        position: sticky;
+        top: 15px;
         display: flex;
         flex-direction: column;
         background: rgba(21, 24, 28,1);
@@ -58,6 +60,8 @@
         }
     }
     .whoToFollow{
+        position: sticky;
+        top: 360px;
         max-height: 350px;
     }
     @media only screen and (max-width:1200px){

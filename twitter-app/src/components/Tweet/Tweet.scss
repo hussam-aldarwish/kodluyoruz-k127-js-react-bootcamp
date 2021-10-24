@@ -1,0 +1,41 @@
+.tweet{
+    flex: 0.4;
+    border-right: 1px solid var(--twitter-background);
+    overflow-y: scroll;
+    max-width: 600px;
+    min-width: 600px;
+    margin-top:80px ;
+}
+.tweet::-webkit-scrollbar {
+    display: none;
+  }
+.tweet-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;background: #000;
+    min-width:600px;
+    border-bottom: 0.1mm solid rgb(43 43 43);
+    padding: 15px 0;
+    cursor: pointer;
+    color: white;
+}
+.tweet-header{
+svg{
+    margin-right:20px ;
+}
+h2{
+    margin: 0 20px;
+    font-weight: bold;
+}
+}
+@media only screen and (max-width:600px){
+    .tweet{
+        min-width: 100%;
+        .tweet-header{
+         min-width:100% !important;
+         right: 0;
+        }
+    }
+}
