@@ -2,14 +2,13 @@ import React from 'react';
 import { BsChat } from 'react-icons/bs';
 import { BiRepost } from 'react-icons/bi';
 import { FiHeart, FiUpload} from 'react-icons/fi';
-import { Commint } from './Commint'
+
 import './Post.scss';
 
 
 
-export default function Post() {
+export function Commint() {
     return (
-        <div className="postCont">
         <div className="post">
             <div className="post-avatar">
                 <img src="https://pbs.twimg.com/profile_images/1409753050336616450/FySzLooq_400x400.jpg" className="avatar" alt=""/> 
@@ -22,10 +21,9 @@ export default function Post() {
                          </h3>
                      </div>
                      <div className="post-headerDescription">
-                      <h3> Ansu Fati <br /> #DreamTeen</h3>
+                      <h5> Ansu Fati <br /> #DreamTeen</h5>
                      </div> 
-               </div>
-               <img src="https://pbs.twimg.com/media/FCKrMyvX0AQsl0V?format=jpg&name=large" alt=""/>  
+               </div>  
                <div className="post-footer"> 
                    <BsChat  fontSize="18px" className="message" />
                    <BiRepost fontSize="22px" className="retweet"  />
@@ -33,9 +31,6 @@ export default function Post() {
                    <FiUpload  fontSize="18px" className="share" />
                </div>
             </div>
-            
         </div>
-        <Commint />
-        </div>  
     )
 }

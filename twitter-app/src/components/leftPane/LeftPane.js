@@ -1,20 +1,21 @@
 import React from "react";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toggleTheme } from "../../redux/reducers/theme";
+import { NavLink } from 'react-router-dom';
+
 import { useMediaQuery } from "react-responsive";
 import { FiSearch } from "react-icons/fi";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { FiMail } from "react-icons/fi";
 import { RiTwitterFill } from "react-icons/ri";
 import { HiOutlineUser } from "react-icons/hi";
+import { IoColorPaletteOutline } from "react-icons/io5";
 
 import "./LeftPane.scss";
 import Button from "../Button/Buttun";
 import HomeIcone from "../icon/HomeIcone";
-import { useDispatch } from "react-redux";
-import { toggleTheme } from "../../redux/reducers/theme";
 
 export default function LeftPane() {
-  const [active, setActive] = useState("notActive");
   const isMobile = useMediaQuery({ minWidth: 600 });
   const isTablet = useMediaQuery({ minWidth: 1260 });
 
@@ -32,17 +33,18 @@ export default function LeftPane() {
         <header></header>
         <ul>
           {isMobile && <RiTwitterFill className="twitterLogo" />}
-          <li
-            className={`${active && "active"}`}
-            onClick={() => setActive(!active)}
-          >
+          <NavLink activeClassName="active" to="/" exact>
+          <li>
             <HomeIcone />
             {isTablet && <p>Home</p>}
           </li>
+          </NavLink>
+          <NavLink to="/Search">
           <li>
             <FiSearch />
             {isTablet && <p>Search</p>}
           </li>
+          </NavLink>
           <li>
             <IoNotificationsOutline />
             {isTablet && <p>Notifications</p>}
@@ -53,7 +55,11 @@ export default function LeftPane() {
           </li>
           <li>
             <HiOutlineUser />
-            {isTablet && <p>Profile</p>}
+            {isTablet && <p>Profil</p>}
+          </li>
+          <li onClick={()=>handleToggleTheme()}  >
+            <IoColorPaletteOutline  />
+            {isTablet && <p>Theme</p>}
           </li>
           <Button />
         </ul>
