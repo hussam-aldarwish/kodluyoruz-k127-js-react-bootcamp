@@ -17,12 +17,13 @@ function App() {
       <Helmet htmlAttributes={{ theme: theme }} />
       <LeftPane />
       <Switch>
-        <Router>
-          <Route path="/">
+          <Route path="/" exact>
             <Tweet />
           </Route>
+          <Route path="/Serch">
+            <input />
+          </Route>
           <Rightpane />
-        </Router>
       </Switch>
     </div>
   );
