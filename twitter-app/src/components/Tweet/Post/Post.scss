@@ -1,7 +1,12 @@
+@import "../../../App.scss";
+.postCont{
+    display: flex;
+    flex-direction: column;
+}
 .post{
     display: flex;
     align-items: flex-start;
-    border-bottom: 0.1mm solid rgb(43, 43, 43);
+    border-bottom: 0.1mm solid $borderColor;
     padding: 10px 10px 10px 0;
 }
 .post-body{
@@ -20,7 +25,7 @@
     color: #6E767D;
 }
 .message:hover{
-   color: #1D9BF0;
+   color: $colorBLue;
    cursor: pointer;
 }
 .retweet:hover{
@@ -32,7 +37,7 @@
     cursor: pointer;
 }
 .share:hover{
-    color: #1D9BF0;
+    color: $colorBLue;
     cursor: pointer;
 }
 .post-header{

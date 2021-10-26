@@ -7,7 +7,7 @@ import "./TweetBox.scss";
 
 export default function TweetBox() {
   return (
-    <div className="tweet-box">
+    <div className="tweet-box" id="tweet-box">
       <form>
         <div className="tweet-box-input">
           <img

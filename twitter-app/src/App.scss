@@ -1,8 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&display=swap");
 $font: "Karla", sans-serif;
-$background: rgb(0, 0, 0);
+$backgroundDark: rgb(0, 0, 0);
+$backgroundLight: rgb(255, 255, 255);
 $fontColor: #fff;
-
+$fontColorlight: #000;
+$borderColor:#4a4a4a96;
+$borderColorlight:rgb(239 243 244);
+$colorBLue:#1D9BF0;
+$color2: rgb(29, 155, 240);
+$hoverColor:rgba(41, 41, 41, 0.116);
 $transitionfast: 100ms;
 $transitionNormal: 300ms;
 $transitionslow: 1s;
@@ -12,10 +18,19 @@ overflow-x: hidden;
   width: 0;
 }
 }
+html[theme="light"]{
+  body{
+    background: $backgroundLight;
+    color: $fontColorlight;
+  }
+  *{
+    border-color: $borderColorlight;
+  }
+  }
 body {
   font-family: $font;
   font-weight: lighter;
-  background: $background;
+  background: $backgroundDark;
   color: $fontColor;
   margin: 0;
   padding: 0;

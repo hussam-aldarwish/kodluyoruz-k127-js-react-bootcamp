@@ -1,6 +1,7 @@
+@import "../../App.scss";
 .tweet{
     flex: 0.4;
-    border-right: 1px solid var(--twitter-background);
+    border-right: 1px solid $borderColor;
     overflow-y: scroll;
     max-width: 600px;
     min-width: 600px;
@@ -16,7 +17,7 @@
     position: fixed;
     top: 0;background: #000;
     min-width:600px;
-    border-bottom: 0.1mm solid rgb(43 43 43);
+    border-bottom: 0.1mm solid $borderColor;
     padding: 15px 0;
     cursor: pointer;
     color: white;
@@ -38,4 +39,19 @@ h2{
          right: 0;
         }
     }
+}
+html[theme="light"]{
+    input{
+        background: $backgroundLight;
+        color: $backgroundDark;
+    }
+  .tweet-header{
+      background: $backgroundLight;
+      color: $backgroundDark;
+  }
+  .post{
+      p,h1,h3,h5{
+          color: #000;
+      }
+  }
 }
