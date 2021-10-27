@@ -1,0 +1,29 @@
+@import "../../../App.scss";
+.logout {
+  display: flex;
+  flex-direction: row;
+  background: $hoverColor;
+  background: #4a4a4a96;
+  width: -webkit-fill-available;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 35px;
+  .eserDes {
+    * {
+      margin: 0 10px;
+    }
+  }
+  button {
+    width: 100%;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: rgb(233, 73, 73);
+    cursor: pointer;
+  }
+}
+html[theme="light"]{
+    .logout{
+        background: $hoverColorligt;
+    }
+}

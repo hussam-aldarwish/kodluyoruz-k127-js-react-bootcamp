@@ -50,3 +50,11 @@ html[theme="light"]{
         }
     }
 }
+@media only screen and (max-width: 1260px) {
+  
+}
+@media only screen and (max-width: 600px) {
+  .Search{
+    min-width: 100%;
+  }
+}

@@ -45,3 +45,6 @@ body {
   width: 100vw;
   justify-content: center;
 }
+input:focus-visible {
+  outline: none !important;
+}

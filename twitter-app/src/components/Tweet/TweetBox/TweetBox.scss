@@ -19,6 +19,11 @@
   display: flex;
   flex-direction: column;
   button {
+    background: $color2;
+    color: $fontColor;
+    transition: $transitionNormal;
+    border: none;
+    border-radius: 35px;
     width: 75px;
     height: 36px;
     font-weight: bolder;

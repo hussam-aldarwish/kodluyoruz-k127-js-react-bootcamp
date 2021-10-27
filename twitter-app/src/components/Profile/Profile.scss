@@ -16,6 +16,17 @@
     padding: 15px 20px;
     cursor: pointer;
     background-color: black;
+    a{
+        button{
+            background: none;
+            border: none;
+            color: rgb(233, 73, 73);
+            svg{
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
 }
 .username > h3 {
     font-size: 20px;
@@ -45,6 +56,21 @@ html{
     overflow-x: hidden;
     &:-webkit-scrollbar {
       width: 0;
+    }
+}
+@media only screen and (max-width: 1260px) {
+
+}
+@media only screen and (max-width: 600px) {
+    .profile{
+        min-width: 100%;
+        height: auto;
+    }
+    .user-img{
+        button{
+            left: 70% !important;
+            width: 100px !important;
+        }
     }
 }
 html[theme="light"]{
