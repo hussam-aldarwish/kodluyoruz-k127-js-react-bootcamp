@@ -30,16 +30,15 @@ export default function LeftPane() {
   return (
     <>
       <div className="leftPane">
-        <header></header>
         <ul>
           {isMobile && <RiTwitterFill className="twitterLogo" />}
-          <NavLink activeClassName="active" to="/" exact>
+          <NavLink activeClassName="activeClass" to="/" exact>
           <li>
             <HomeIcone />
             {isTablet && <p>Home</p>}
           </li>
           </NavLink>
-          <NavLink to="/Search">
+          <NavLink to="/Search" activeClassName="activeClass">
           <li>
             <FiSearch />
             {isTablet && <p>Search</p>}
@@ -53,16 +52,21 @@ export default function LeftPane() {
             <FiMail />
             {isTablet && <p>Messiges</p>}
           </li>
+          <NavLink to="/Profile" activeClassName="activeClass" >
           <li>
             <HiOutlineUser />
             {isTablet && <p>Profil</p>}
           </li>
+          </NavLink>
           <li onClick={()=>handleToggleTheme()}  >
             <IoColorPaletteOutline  />
             {isTablet && <p>Theme</p>}
           </li>
           <Button />
         </ul>
+        <div className="logout" >
+
+        </div>
       </div>
     </>
   );

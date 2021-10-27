@@ -9,7 +9,7 @@ export default function Button() {
     return (
         
         <>
-          <button type='button'>
+          <button className='tweetButton' type='button'>
          {isTabletx && <Twite />}
            
         {isTablet && <p>Twitte</p>}

@@ -10,7 +10,7 @@
         top: 15px;
         display: flex;
         flex-direction: column;
-        background: rgba(21, 24, 28,1);
+        background: $background2;
         min-width: 350px;
         max-height: 480px;
         min-height: auto;
@@ -83,4 +83,9 @@ html[theme="light"]{
           }
       }
   }
+  
+  .Rightpane .hashContainer ul li:hover {
+        background: $hoverColorligt;
+      }
+  
 }
