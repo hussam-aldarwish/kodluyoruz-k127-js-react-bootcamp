@@ -34,7 +34,10 @@ export default function SignUp() {
       <div className="login">
         {isMobile && (
           <div className="photo">
-            <img src="https://abs.twimg.com/sticky/illustrations/lohp_en_1302x955.png" />
+            <img
+              src="https://abs.twimg.com/sticky/illustrations/lohp_en_1302x955.png"
+              alt="twitter"
+            />
             <RiTwitterFill />
           </div>
         )}

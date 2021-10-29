@@ -14,6 +14,7 @@ export default function LogoutButton() {
         <div className="logoutAvatar">
           <img
             src="https://pbs.twimg.com/profile_images/1453002556205146125/uWb5vs19_200x200.jpg"
+            alt="twitter"
             className="avatar"
           />
         </div>

@@ -9,7 +9,7 @@ export default function ProfileBottom() {
         <div className="friends">
           <div className="friend">
             <div>
-              <img src="https://binged.it/3prQzwQ" />
+              <img src="https://binged.it/3prQzwQ" alt="twitter" />
               <div className="name">
                 <span> Bilgirje </span>
                 <p style={{ marginTop: "1px" }}>@bilgirje</p>
@@ -19,7 +19,7 @@ export default function ProfileBottom() {
           </div>
           <div className="friend">
             <div>
-              <img src="https://binged.it/3prQzwQ" />
+              <img src="https://binged.it/3prQzwQ" alt="twitter" />
               <div className="name">
                 <span> Bilgirje </span>
                 <p style={{ marginTop: "1px" }}>@bilgirje</p>
@@ -29,7 +29,7 @@ export default function ProfileBottom() {
           </div>
           <div className="friend">
             <div>
-              <img src="https://binged.it/3prQzwQ" />
+              <img src="https://binged.it/3prQzwQ" alt="twitter" />
               <div className="name">
                 <span> Bilgirje </span>
                 <p style={{ marginTop: "1px" }}>@bilgirje</p>

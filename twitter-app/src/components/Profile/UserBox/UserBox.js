@@ -6,8 +6,16 @@ export default function UserBox() {
   return (
     <div className="user-box">
       <div className="user-img">
-        <img src="https://pbs.twimg.com/profile_banners/704421179096862720/1624439857/600x200" className="profile-background" />
-        <img src="https://pbs.twimg.com/profile_images/1453002556205146125/uWb5vs19_200x200.jpg" className="profileAvatar" />
+        <img
+          src="https://pbs.twimg.com/profile_banners/704421179096862720/1624439857/600x200"
+          className="profile-background"
+          alt="twitter"
+        />
+        <img
+          src="https://pbs.twimg.com/profile_images/1453002556205146125/uWb5vs19_200x200.jpg"
+          className="profileAvatar"
+          alt="twitter"
+        />
         <button> Edit profile</button>
       </div>
       <div className="user-details">
