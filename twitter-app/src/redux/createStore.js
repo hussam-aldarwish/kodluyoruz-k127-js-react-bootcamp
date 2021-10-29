@@ -25,6 +25,7 @@ export default function createStore(history) {
   const store = configureStore({
     reducer: persistedReducer,
     middleware: middleware,
+    devTools: process.env.NODE_ENV === "development",
   });
 
   const persistor = persistStore(store);

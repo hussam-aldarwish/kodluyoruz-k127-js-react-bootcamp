@@ -1,35 +1,17 @@
 import { Switch, Route } from "react-router-dom";
-import LeftPane from "./components/leftPane/LeftPane";
-import Rightpane from "./components/rigtePane/Rightpane";
-import Tweet from "./components/Tweet";
-import Search from "./components/Search/Search";
-import Profile from "./components/Profile/Profile";
 import Login from "./components/Login/Login";
 import SignUp from "./components/Login/SignUp";
+import HomePage from "./pages/Home";
+import SearchPage from "./pages/Search";
+import ProfilePage from "./pages/Profile";
 
 const Routes = () => (
   <Switch>
-    <Route path="/" exact>
-      <LeftPane />
-      <Tweet />
-      <Rightpane />
-    </Route>
-    <Route path="/Search">
-      <LeftPane />
-      <Search />
-      <Rightpane />
-    </Route>
-    <Route path="/Profile">
-      <LeftPane />
-      <Profile />
-      <Rightpane />
-    </Route>
-    <Route path="/login">
-      <Login />
-    </Route>
-    <Route path="/SignUp">
-      <SignUp />
-    </Route>
+    <Route path="/" exact component={HomePage} />
+    <Route path="/Search" component={SearchPage} />
+    <Route path="/Profile" component={ProfilePage}></Route>
+    <Route path="/login" component={Login} />
+    <Route path="/SignUp" component={SignUp} />
   </Switch>
 );
 

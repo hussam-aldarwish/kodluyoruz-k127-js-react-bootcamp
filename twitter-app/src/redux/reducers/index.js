@@ -1,7 +1,6 @@
-import themeReducer from "./theme";
-
+import userReducer from "./user";
 const reducers = {
-  theme: themeReducer,
+  user: userReducer,
 };
 
 export default reducers;
