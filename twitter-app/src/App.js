@@ -13,6 +13,7 @@ function App() {
 
   function toggleTheme() {
     setTheme(theme === "light" ? "dark" : "light");
+    console.log(theme);
     localStorage.setItem("theme", theme);
   }
 
