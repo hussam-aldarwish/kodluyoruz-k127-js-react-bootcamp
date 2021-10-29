@@ -1,6 +1,5 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { toggleTheme } from "../../redux/reducers/theme";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../contexts/ThemeContext";
 import { NavLink } from "react-router-dom";
 
 import { useMediaQuery } from "react-responsive";
@@ -20,13 +19,7 @@ export default function LeftPane() {
   const isMobile = useMediaQuery({ minWidth: 600 });
   const isTablet = useMediaQuery({ minWidth: 1260 });
 
-  const dispatch = useDispatch();
-  // ! handle toggleTheme
-  // You can use it like this: onClick={()=>handleToggleTheme()}
-  // eslint-disable-next-line
-  function handleToggleTheme() {
-    dispatch(toggleTheme());
-  }
+  const { toggleTheme } = useContext(ThemeContext);
 
   return (
     <>
@@ -59,14 +52,13 @@ export default function LeftPane() {
               {isTablet && <p>Profil</p>}
             </li>
           </NavLink>
-          <li onClick={() => handleToggleTheme()}>
+          <li onClick={() => toggleTheme()}>
             <IoColorPaletteOutline />
             {isTablet && <p>Theme</p>}
           </li>
           <Button />
         </ul>
         {isTablet && <LogoutButton />}
-        
       </div>
     </>
   );
