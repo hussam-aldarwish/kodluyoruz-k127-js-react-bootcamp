@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.scss";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,13 +9,20 @@ import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import Input from "../Input";
 
-import { selectLoading, signupAsync } from "../../redux/reducers/user";
+import {
+  selectLoading,
+  selectSignupError,
+  signupAsync,
+} from "../../redux/reducers/user";
+
 export default function SignUp() {
   const isMobile = useMediaQuery({ minWidth: 600 });
 
+  const [showError, setShowError] = useState(false);
+
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
-  console.log(loading);
+  const error = useSelector(selectSignupError);
   const history = useHistory();
 
   const {
@@ -25,12 +32,14 @@ export default function SignUp() {
   } = useForm();
 
   async function submitForm(data) {
+    setShowError(true);
     await dispatch(signupAsync(data));
-    history.push("/");
+    if (!!!error) history.push("/");
   }
 
   return (
     <>
+      {error && showError ? <span>{error}</span> : null}
       <div className="login">
         {isMobile && (
           <div className="photo">
@@ -53,18 +62,21 @@ export default function SignUp() {
               placeholder="Display Name"
               error={errors.displayName}
               {...register("displayName", { required: true })}
+              onChange={() => setShowError(false)}
             />
             <Input
               type="email"
               placeholder="example@example.com"
               error={errors.email}
               {...register("email", { required: true })}
+              onChange={() => setShowError(false)}
             />
             <Input
               type="password"
               placeholder="Password"
               error={errors.password}
               {...register("password", { required: true })}
+              onChange={() => setShowError(false)}
             />
             <Input
               type="submit"
