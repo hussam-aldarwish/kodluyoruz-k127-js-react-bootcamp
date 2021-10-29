@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { ThemeContext } from "./contexts/ThemeContext";
 import Routes from "./routes";
@@ -13,9 +13,11 @@ function App() {
 
   function toggleTheme() {
     setTheme(theme === "light" ? "dark" : "light");
-    console.log(theme);
-    localStorage.setItem("theme", theme);
   }
+
+  useEffect(() => {
+    if (theme) localStorage.setItem("theme", theme);
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
