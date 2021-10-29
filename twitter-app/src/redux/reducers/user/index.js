@@ -1,1 +1,1 @@
-export { default, selectLoading, signupAsync } from "./userSlice";
+export { default, selectLoading, selectUser, signupAsync } from "./userSlice";
