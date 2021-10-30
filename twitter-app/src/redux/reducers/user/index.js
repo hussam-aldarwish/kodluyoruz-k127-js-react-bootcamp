@@ -4,7 +4,9 @@ export {
   selectUser,
   selectSignupError,
   selectLoginError,
+  selectUsersToFollow,
   signupAsync,
   loginAsync,
   logout,
+  loadUsersToFollow,
 } from "./userSlice";
