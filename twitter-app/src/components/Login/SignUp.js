@@ -34,7 +34,7 @@ export default function SignUp() {
   const onsubmit = async (data) => {
     setShowError(true);
     await dispatch(signupAsync(data));
-    if (!error) history.push("/");
+    if (error === null) history.push("/");
   };
 
   return (

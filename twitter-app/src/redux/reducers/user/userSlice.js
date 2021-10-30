@@ -41,7 +41,7 @@ export const signupAsync = createAsyncThunk(
         },
         { merge: true }
       );
-      dispatch(loadUsersToFollow(3));
+      dispatch(loadUsersToFollow({ uid: uid, n: 3 }));
       return { uid, username, email, displayName };
     } catch (error) {
       return rejectWithValue(error.code);
@@ -65,7 +65,7 @@ export const loginAsync = createAsyncThunk(
       const userRef = doc(db, "users", uid);
       const userSnap = await getDoc(userRef);
       const { username, displayName } = userSnap.data();
-      dispatch(loadUsersToFollow(3));
+      dispatch(loadUsersToFollow({ uid: uid, n: 3 }));
       return { uid, username, email, displayName };
     } catch (error) {
       return rejectWithValue(error.code);
@@ -75,19 +75,21 @@ export const loginAsync = createAsyncThunk(
 
 export const loadUsersToFollow = createAsyncThunk(
   "user/loadUsersToFollow",
-  async (n) => {
+  async ({ uid, n }) => {
     const querySnapshot = await getDocs(collection(db, "users"));
     let users = [];
     querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      users.push({
-        uid: doc.id,
-        displayName: data.displayName,
-        username: data.username,
-      });
+      const id = doc.id;
+      if (uid !== id) {
+        const data = doc.data();
+        users.push({
+          uid: id,
+          displayName: data.displayName,
+          username: data.username,
+        });
+      }
     });
-    const shuffled = users.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, n);
+    return users.sort(() => Math.random() - Math.random()).slice(0, n);
   }
 );
 
@@ -146,7 +148,6 @@ const userSlice = createSlice({
       state.loginError = action.payload;
     },
     [loadUsersToFollow.fulfilled]: (state, action) => {
-      console.log(action);
       state.usersToFollow = action.payload;
     },
   },
