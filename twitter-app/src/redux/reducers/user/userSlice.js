@@ -21,7 +21,9 @@ export const signupAsync = createAsyncThunk(
   "user/signup",
   async (payload, { rejectWithValue, dispatch }) => {
     const displayName = payload.displayName;
-    const username = payload.username.toLowerCase();
+    const username = payload.username.startsWith("@")
+      ? payload.username.toLowerCase()
+      : `@${payload.username.toLowerCase()}`;
     const email = payload.email;
     const password = payload.password;
     try {
