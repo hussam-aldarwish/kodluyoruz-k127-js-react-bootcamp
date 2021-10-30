@@ -71,3 +71,16 @@
         }
     }
 }
+.errorbar{
+    min-width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border:0.1mm solid orangered ;
+    border-radius: 35px;
+    background: #ff45001a;
+    justify-content: center;
+    margin: 10px !important;
+    font-size: 0.8rem;
+    color: orangered;
+}

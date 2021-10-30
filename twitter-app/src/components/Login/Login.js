@@ -38,7 +38,7 @@ export default function Login() {
 
   return (
     <>
-      {error && showError ? <span>{error}</span> : null}
+      
       <div className="login">
         {isMobile && (
           <div className="photo">
@@ -56,6 +56,7 @@ export default function Login() {
             <h2>Join Twitter today.</h2>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
+            {error && showError ? <span className="errorbar">{error}</span> : null}
             <Input
               type="email"
               placeholder="example@example.com"
@@ -68,6 +69,7 @@ export default function Login() {
               error={errors.password}
               {...register("password", { required: true })}
             />
+            
             <Input
               type="submit"
               value={!loading ? "Login" : "Loading ..."}
