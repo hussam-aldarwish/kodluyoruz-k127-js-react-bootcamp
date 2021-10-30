@@ -21,30 +21,6 @@ export default function WhoToFollow() {
               </h4>
             </li>
           ))}
-          <li className="followList">
-            <HiOutlineUser className="avatar" />
-            <h4>
-              Kent C. Dodds
-              <br />
-              <p>@kentcdodds</p>
-            </h4>
-          </li>
-          <li className="followList">
-            <HiOutlineUser className="avatar" />
-            <h4>
-              Kent C. Dodds
-              <br />
-              <p>@kentcdodds</p>
-            </h4>
-          </li>
-          <li className="followList">
-            <HiOutlineUser className="avatar" />
-            <h4>
-              Kent C. Dodds
-              <br />
-              <p>@kentcdodds</p>
-            </h4>
-          </li>
         </ul>
       </div>
     </>
