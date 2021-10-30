@@ -9,12 +9,14 @@
   padding: 10px;
   border-radius: 35px;
   .eserDes {
+    width: -webkit-fill-available;
+    overflow: hidden;
     * {
       margin: 0 10px;
     }
   }
   button {
-    width: 100%;
+    width: auto;
     font-size: 1.5rem;
     background: none;
     border: none;
