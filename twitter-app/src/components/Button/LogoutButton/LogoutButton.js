@@ -2,11 +2,12 @@ import React from "react";
 import { HiOutlineLogout } from "react-icons/hi";
 import "./logoutBottun.scss";
 
-import { useDispatch } from "react-redux";
-import { logout } from "../../../redux/reducers/user";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "../../../redux/reducers/user";
 
 export default function LogoutButton() {
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
 
   return (
     <>
@@ -19,8 +20,8 @@ export default function LogoutButton() {
           />
         </div>
         <div className="eserDes">
-          <h3> Kodluyoruz </h3>
-          <span> @kodluyoruz </span>
+          <h3>{user.displayName}</h3>
+          <span>{user.username}</span>
         </div>
         <button onClick={() => dispatch(logout())}>
           <HiOutlineLogout />
