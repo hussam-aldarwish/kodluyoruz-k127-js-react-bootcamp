@@ -31,11 +31,11 @@ export default function SignUp() {
     handleSubmit,
   } = useForm();
 
-  async function submitForm(data) {
+  const onsubmit = async (data) => {
     setShowError(true);
     await dispatch(signupAsync(data));
-    if (!!!error) history.push("/");
-  }
+    if (!error) history.push("/");
+  };
 
   return (
     <>
@@ -56,27 +56,34 @@ export default function SignUp() {
             <h1>Happening now</h1>
             <h2>Join Twitter today.</h2>
           </div>
-          <form onSubmit={handleSubmit(submitForm)}>
+          <form onSubmit={handleSubmit(onsubmit)}>
             <Input
               type="text"
               placeholder="Display Name"
               error={errors.displayName}
               {...register("displayName", { required: true })}
-              onChange={() => setShowError(false)}
+            />
+            <Input
+              type="text"
+              placeholder="@username"
+              error={errors.username}
+              {...register("username", {
+                required: true,
+                // eslint-disable-next-line
+                pattern: /^[a-zA-Z0-9_\.\-]+$/,
+              })}
             />
             <Input
               type="email"
               placeholder="example@example.com"
               error={errors.email}
               {...register("email", { required: true })}
-              onChange={() => setShowError(false)}
             />
             <Input
               type="password"
               placeholder="Password"
               error={errors.password}
               {...register("password", { required: true })}
-              onChange={() => setShowError(false)}
             />
             <Input
               type="submit"

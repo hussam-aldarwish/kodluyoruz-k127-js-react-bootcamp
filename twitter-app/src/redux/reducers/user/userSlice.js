@@ -2,25 +2,34 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
   createUserWithEmailAndPassword,
   getAuth,
-  updateProfile,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
 const auth = getAuth();
+const db = getFirestore();
 
 export const signupAsync = createAsyncThunk(
   "user/signup",
   async (payload, { rejectWithValue }) => {
+    const displayName = payload.displayName;
+    const username = payload.username.toLowerCase();
+    const email = payload.email;
+    const password = payload.password;
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
-        payload.email,
-        payload.password
+        email,
+        password
       );
-      const user = userCredential.user;
-      await updateProfile(user, { displayName: payload.displayName });
-      const { uid, email, displayName } = user;
-      return { uid, email, displayName };
+      const { uid } = userCredential.user;
+      const userRef = doc(db, "users", uid);
+      await setDoc(
+        userRef,
+        { displayName: displayName, username: username },
+        { merge: true }
+      );
+      return { uid, username, email, displayName };
     } catch (error) {
       return rejectWithValue(error.code);
     }
@@ -103,4 +112,6 @@ const userSlice = createSlice({
 export const { logout } = userSlice.actions;
 export const selectLoading = (state) => state.user.loading;
 export const selectUser = (state) => state.user.user;
+export const selectSignupError = (state) => state.user.signupError;
+export const selectLoginError = (state) => state.user.loginError;
 export default userSlice.reducer;
