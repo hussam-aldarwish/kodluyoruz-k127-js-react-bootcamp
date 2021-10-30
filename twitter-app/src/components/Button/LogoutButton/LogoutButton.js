@@ -20,8 +20,8 @@ export default function LogoutButton() {
           />
         </div>
         <div className="eserDes">
-          <h3>{user.displayName}</h3>
-          <span>{user.username}</span>
+          <h3>{user ? user.displayName : ""}</h3>
+          <span>{user ? user.username : ""}</span>
         </div>
         <button onClick={() => dispatch(logout())}>
           <HiOutlineLogout />

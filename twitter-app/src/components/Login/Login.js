@@ -11,7 +11,9 @@ import { useHistory } from "react-router-dom";
 import {
   selectLoading,
   selectLoginError,
+  selectUser,
   loginAsync,
+  logout,
 } from "../../redux/reducers/user";
 import Input from "../Input";
 
@@ -21,6 +23,7 @@ export default function Login() {
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
   const error = useSelector(selectLoginError);
+  const user = useSelector(selectUser);
   const history = useHistory();
   const [showError, setShowError] = useState(false);
 
@@ -30,9 +33,10 @@ export default function Login() {
     handleSubmit,
   } = useForm();
 
-  function submitForm(data) {
+  async function onSubmit(data) {
     setShowError(true);
-    dispatch(loginAsync(data));
+    if (user) dispatch(logout);
+    await dispatch(loginAsync(data));
     if (!error) history.push("/");
   }
 
@@ -55,7 +59,7 @@ export default function Login() {
             <h1>Happening now</h1>
             <h2>Join Twitter today.</h2>
           </div>
-          <form onSubmit={handleSubmit(submitForm)}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <Input
               type="email"
               placeholder="example@example.com"

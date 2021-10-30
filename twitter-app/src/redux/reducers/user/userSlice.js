@@ -5,7 +5,13 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  getDoc,
+  serverTimestamp,
+} from "firebase/firestore";
 const auth = getAuth();
 const db = getFirestore();
 
@@ -26,7 +32,11 @@ export const signupAsync = createAsyncThunk(
       const userRef = doc(db, "users", uid);
       await setDoc(
         userRef,
-        { displayName: displayName, username: username },
+        {
+          displayName: displayName,
+          username: username,
+          lastUpdated: serverTimestamp(),
+        },
         { merge: true }
       );
       return { uid, username, email, displayName };
@@ -39,15 +49,21 @@ export const signupAsync = createAsyncThunk(
 export const loginAsync = createAsyncThunk(
   "user/login",
   async (payload, { rejectWithValue }) => {
+    const email = payload.email;
+    const password = payload.password;
+
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,
-        payload.email,
-        payload.password
+        email,
+        password
       );
       const user = userCredential.user;
-      const { uid, email, displayName } = user;
-      return { uid, email, displayName };
+      const { uid } = user;
+      const userRef = doc(db, "users", uid);
+      const userSnap = await getDoc(userRef);
+      const { username, displayName } = userSnap.data();
+      return { uid, username, email, displayName };
     } catch (error) {
       return rejectWithValue(error.code);
     }
