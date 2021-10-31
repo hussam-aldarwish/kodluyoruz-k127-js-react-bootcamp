@@ -1,23 +1,23 @@
 @import "../../App.scss";
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@800&display=swap");
 @font-face {
     font-family: "Montserrat";
     src: url(https://fonts.googleapis.com/css2?family=Karla:wght@800&display=swap);
     font-weight: bold;
 }
-.login{
+.login {
     width: 100%;
     max-height: 100vh;
     display: flex;
     flex-direction: row;
 }
-.photo{
+.photo {
     width: 55%;
     overflow: hidden;
-    img{
+    img {
         width: auto;
     }
-    svg{
+    svg {
         position: relative;
         bottom: 75%;
         left: 50%;
@@ -28,67 +28,59 @@
         z-index: 9999;
     }
 }
-.formCont{
+.formCont {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left:50px ;
+    padding-left: 50px;
     width: 45%;
-    margin-top:10%;
-    svg{
+    margin-top: 10%;
+    svg {
         width: 50px;
         height: auto;
     }
-    .formHade{
-        h1{
-            font-family: 'karla', sans-serif;
+    .formHade {
+        h1 {
+            font-family: "karla", sans-serif;
             font-weight: bold;
             font-size: 5rem !important;
-            @media screen  and (max-width:600px) {
+            @media screen and (max-width: 600px) {
                 font-size: 2.5rem !important;
                 width: max-content;
             }
         }
-        h2{
+        h2 {
             font-size: 2.5rem !important;
-            @media screen  and (max-width:600px) {
+            @media screen and (max-width: 600px) {
                 font-size: 2.5rem !important;
                 width: max-content;
             }
         }
     }
-    form{
+    form {
         width: max-content;
         height: 70vh;
         display: flex;
         flex-direction: column;
-        input{
-            width: 250px;
-            height: 35px;
-            border-radius: 35px;
-            margin-bottom: 10px;
-            padding: 0 15px;
-            margin-left: 10px;
-            background: #fff;
-            border: none;
-        }
-        button{
-            width: 60px;
-            height: 30px;
-            background: $colorBLue;
-            color: $fontColor;
-            border: none;
-            border-radius: 35px;
-            align-self: flex-start;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-        span{
+        span {
             margin-top: 10px;
-            margin-left:10px ;
-            a{
+            margin-left: 10px;
+            a {
                 color: $colorBLue;
             }
         }
     }
+}
+.errorbar{
+    min-width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border:0.1mm solid orangered ;
+    border-radius: 35px;
+    background: #ff45001a;
+    justify-content: center;
+    margin: 10px !important;
+    font-size: 0.8rem;
+    color: orangered;
 }

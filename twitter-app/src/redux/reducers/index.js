@@ -1,7 +1,8 @@
-import themeReducer from "./theme";
-
+import userReducer from "./user";
+import tweetReducer from "./tweet";
 const reducers = {
-  theme: themeReducer,
+  user: userReducer,
+  tweet: tweetReducer,
 };
 
 export default reducers;

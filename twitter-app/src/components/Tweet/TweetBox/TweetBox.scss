@@ -49,3 +49,16 @@
   color: $colorBLue;
   margin-bottom: 15px;
 }
+
+button[type="submit"] {
+  max-width: -webkit-fill-available;
+  height: 30px;
+  background: $colorBLue;
+  color: $fontColor;
+  cursor: pointer;
+  &:disabled {
+      background-color: #6c757d;
+      border-color: #6c757d;
+      cursor: default;
+  }
+}

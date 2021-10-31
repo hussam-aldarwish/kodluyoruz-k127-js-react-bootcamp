@@ -2,37 +2,65 @@ import React from "react";
 import { FiImage, FiSmile } from "react-icons/fi";
 import { AiOutlineFileGif } from "react-icons/ai";
 import { BsCalendar2Event } from "react-icons/bs";
+import { useForm } from "react-hook-form";
 
 import "./TweetBox.scss";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  postTweetAsync,
+  selectError,
+  selectLoading,
+} from "../../../redux/reducers/tweet";
 
 export default function TweetBox() {
+  const { register, handleSubmit, reset } = useForm();
+  const dispatch = useDispatch();
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
+
+  async function onSubmit(data) {
+    const text = data.text;
+    const image = data.image[0];
+    if (text || image) await dispatch(postTweetAsync({ text, image }));
+    if (!error) reset();
+  }
   return (
     <div className="tweet-box" id="tweet-box">
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="tweet-box-input">
-          <img
-            src="https://pbs.twimg.com/profile_images/1404339457868902404/QrUcR8so_400x400.jpg"
-            className="avatar"
-            alt=""
+          <img src="/tweet.png" className="avatar" alt="" />
+          <input
+            placeholder="What's happening?"
+            type="text"
+            {...register("text")}
           />
-          <input placeholder="What's happening?" type="text" />
         </div>
-        <div className="buttons" >
+        <div className="buttons">
           <div className="tweet-box-icon">
-            <FiImage
-              style={{ width: "20px", height: "20px", marginLeft: "70px" }}
+            <input
+              id="file-upload"
+              type="file"
+              style={{ display: "none" }}
+              {...register("image")}
             />
-            <AiOutlineFileGif
-              style={{ width: "20px", height: "20px", marginLeft: "20px" }}
-            />
-            <FiSmile
-              style={{ width: "20px", height: "20px", marginLeft: "20px" }}
-            />
-            <BsCalendar2Event
-              style={{ width: "20px", height: "20px", marginLeft: "20px" }}
-            />
+            <label htmlFor="file-upload" style={{ cursor: "pointer" }}>
+              <FiImage
+                style={{ width: "20px", height: "20px", marginLeft: "70px" }}
+              />
+              <AiOutlineFileGif
+                style={{ width: "20px", height: "20px", marginLeft: "20px" }}
+              />
+              <FiSmile
+                style={{ width: "20px", height: "20px", marginLeft: "20px" }}
+              />
+              <BsCalendar2Event
+                style={{ width: "20px", height: "20px", marginLeft: "20px" }}
+              />
+            </label>
           </div>
-          <button> Tweet </button>
+          <button type="submit" disabled={loading}>
+            {loading ? "Tweeting ..." : "Tweet"}
+          </button>
         </div>
       </form>
     </div>
