@@ -59,7 +59,7 @@ export default function Profile() {
           <h3 style={{ marginBottom: "2px", marginTop: "3px" }}>
             {user?.displayName}
           </h3>
-          <span>0 Tweet</span>
+          <span>{posts.length} Tweet</span>
         </div>
         {isDesktop && (
           <Link to="/login">
