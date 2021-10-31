@@ -10,7 +10,7 @@ export default function createStore(history) {
   const persistConfig = {
     key: "twitter-app",
     storage,
-    blacklist: ["router"],
+    blacklist: ["router", "tweet"],
   };
 
   const rootReducer = combineReducers({
