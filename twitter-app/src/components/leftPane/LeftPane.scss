@@ -15,7 +15,7 @@ a{
   text-align: start;
   justify-content: space-between;
   border-right: 0.1mm solid $borderColor;
-
+  
   ul {
     display: flex;
     flex-direction: column;
@@ -60,6 +60,9 @@ a{
     li:hover {
       font-weight: bold;
       background: $hoverColor;
+    }
+    ol{
+      display: flex;
     }
   }
   header {
@@ -131,16 +134,87 @@ a{
     }
   }
 }
+
 .active {
   font-weight: bold;
   background: rgba(217, 217, 217, 0.1);
 }
+.menu{
+  background: $backgroundDark;
+  border-radius: 15px;
+  border:1px solid;
+  padding: 15px 0;
+  position: absolute;
+  top: 100px;
+  transition: 0.5s;
+  ol{
+    padding: 0;
+  }
+}
+.activemenu{
+  transition: 0.3s;
+  display: none;
+}
+.activemenuMobile{
+  transition: 0.3s;
+  display: none;
+}
 
-
+.menuMobile{
+  position: fixed;
+  bottom: 60PX;
+  right: 75PX;
+  width: 125px;
+  height: auto;
+  border-radius: 5PX;
+  background: $backgroundDark;
+  transition: 0.3s;
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 ;
+    h4{
+      text-align: center;
+          padding: 0;
+          margin: 10px 5px;
+        }
+    li{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 5px;
+      &:hover{
+        background: $hoverColor;
+      }
+      svg{
+        width: 24px;
+        height: 24px;
+        margin: 0 10px;
+      }
+      
+    }
+    ol{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        margin-top:10px;
+        li{
+          padding: 5px !important;
+          padding: 0;
+          border-radius: 35px;
+          &:hover{
+            background: $hoverColor;
+          }
+        }
+      }
+  }
+}
 html[theme="light"]{
   .leftPane{
     ul{
       background: $backgroundLight;
+      
       svg{
       color: $colorBLue;
     }
@@ -157,8 +231,21 @@ html[theme="light"]{
       }
     }
     }
+    .menu{
+      background: #e3e3e3 !important;
+      *{
+        background: #e3e3e3 !important;
+      }
+    }
+    
   }
- 
+ .menuMobile{
+      background: #e3e3e3 !important;
+      *{
+        background: #e3e3e3 !important;
+
+      }
+    }
 a{
   color: $backgroundDark;
 } 

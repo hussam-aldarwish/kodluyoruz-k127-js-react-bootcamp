@@ -3,6 +3,7 @@ import { FiImage, FiSmile } from "react-icons/fi";
 import { AiOutlineFileGif } from "react-icons/ai";
 import { BsCalendar2Event } from "react-icons/bs";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 import "./TweetBox.scss";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,16 +25,13 @@ export default function TweetBox() {
     if (text || image) await dispatch(postTweetAsync({ text, image }));
     if (!error) reset();
   }
+  const { t } = useTranslation();
   return (
     <div className="tweet-box" id="tweet-box">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="tweet-box-input">
           <img src="/tweet.png" className="avatar" alt="" />
-          <input
-            placeholder="What's happening?"
-            type="text"
-            {...register("text")}
-          />
+          <input placeholder={t("what")} type="text" {...register("text")} />
         </div>
         <div className="buttons">
           <div className="tweet-box-icon">
@@ -59,7 +57,7 @@ export default function TweetBox() {
             </label>
           </div>
           <button type="submit" disabled={loading}>
-            {loading ? "Tweeting ..." : "Tweet"}
+            {loading ? "Tweeting ..." : t("twitte")}
           </button>
         </div>
       </form>

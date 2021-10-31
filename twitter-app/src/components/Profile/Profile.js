@@ -23,7 +23,7 @@ import {
 export default function Profile() {
   const db = getFirestore();
   const [posts, setPosts] = useState([]);
-  const isDesktop = useMediaQuery({ maxWidth: 600 });
+  const isDesktop = useMediaQuery({ maxWidth: 1259 });
   const history = useHistory();
   const user = useSelector(selectUser);
 
