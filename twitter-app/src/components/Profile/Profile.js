@@ -9,7 +9,7 @@ import UserBox from "./UserBox";
 import Post from "../Tweet/Post/Post";
 
 export default function Profile() {
-  const isDesktop = useMediaQuery({ maxWidth: 600 });
+  const isDesktop = useMediaQuery({ maxWidth: 1259 });
   return (
     <div className="profile">
       <div className="profile-header">
