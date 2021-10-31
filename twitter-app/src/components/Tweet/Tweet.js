@@ -37,7 +37,8 @@ function Tweet() {
       }
     );
     return () => unsubscribe();
-  });
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className="tweet">

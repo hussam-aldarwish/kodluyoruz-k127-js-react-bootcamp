@@ -47,7 +47,8 @@ export default function Profile() {
       }
     );
     return () => unsubscribe();
-  });
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className="profile">

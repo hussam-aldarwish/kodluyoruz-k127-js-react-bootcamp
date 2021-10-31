@@ -13,10 +13,7 @@ export default function Post({ uid, text, image, postedOn }) {
   const [url, setUrl] = useState(null);
 
   const docRef = doc(db, "users", uid);
-  const [user, setuser] = useState({
-    displayName: "Twitter User",
-    username: "@username",
-  });
+  const [user, setuser] = useState();
 
   useEffect(() => {
     async function fetchUser() {
@@ -41,8 +38,8 @@ export default function Post({ uid, text, image, postedOn }) {
           <div className="post-header">
             <div className="post-headerText">
               <h3>
-                {user.displayName}
-                <span className="username"> {user.username}</span>
+                {user?.displayName}
+                <span className="username"> {user?.username}</span>
               </h3>
             </div>
             <div className="post-headerDescription">
