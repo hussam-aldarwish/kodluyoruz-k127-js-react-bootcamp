@@ -1,11 +1,44 @@
-import React from "react";
+import React, { useEffect, useState, memo } from "react";
 import Post from "./Post";
 import TweetBox from "./TweetBox";
 import { BsStars } from "react-icons/bs";
 
+import {
+  getFirestore,
+  collection,
+  query,
+  onSnapshot,
+} from "firebase/firestore";
+
 import "./Tweet.scss";
 
-export default function Tweet() {
+function Tweet() {
+  const db = getFirestore();
+
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(
+      query(collection(db, "posts")),
+      (querySnapshot) => {
+        const array = [];
+        querySnapshot.forEach((doc) => {
+          const id = doc.id;
+          const data = doc.data();
+          array.push({
+            id: id,
+            uid: data.uid,
+            text: data.text,
+            image: data.image,
+            postedOn: new Date(data.postedOn * 1000),
+          });
+        });
+        setPosts(array.sort((a, b) => b.postedOn - a.postedOn));
+      }
+    );
+    return () => unsubscribe();
+  });
+
   return (
     <div className="tweet">
       <div className="tweet-header">
@@ -13,9 +46,17 @@ export default function Tweet() {
         <BsStars />
       </div>
       <TweetBox />
-      <Post />
-      <Post />
-      <Post />
+      {posts.map((post) => (
+        <Post
+          key={post.id}
+          uid={post.uid}
+          text={post.text}
+          image={post.image}
+          postedOn={post.postedOn.toLocaleString()}
+        />
+      ))}
     </div>
   );
 }
+
+export default memo(Tweet);

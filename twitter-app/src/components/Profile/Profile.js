@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 import { BsArrowLeftShort } from "react-icons/bs";
@@ -12,10 +12,43 @@ import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../redux/reducers/user";
 
+import {
+  getFirestore,
+  collection,
+  query,
+  onSnapshot,
+  where,
+} from "firebase/firestore";
+
 export default function Profile() {
+  const db = getFirestore();
+  const [posts, setPosts] = useState([]);
   const isDesktop = useMediaQuery({ maxWidth: 600 });
   const history = useHistory();
   const user = useSelector(selectUser);
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(
+      query(collection(db, "posts"), where("uid", "==", user.uid)),
+      (querySnapshot) => {
+        const array = [];
+        querySnapshot.forEach((doc) => {
+          const id = doc.id;
+          const data = doc.data();
+          array.push({
+            id: id,
+            uid: data.uid,
+            text: data.text,
+            image: data.image,
+            postedOn: new Date(data.postedOn * 1000),
+          });
+        });
+        setPosts(array.sort((a, b) => b.postedOn - a.postedOn));
+      }
+    );
+    return () => unsubscribe();
+  });
+
   return (
     <div className="profile">
       <div className="profile-header">
@@ -37,7 +70,15 @@ export default function Profile() {
         )}
       </div>
       <UserBox />
-      <Post />
+      {posts.map((post) => (
+        <Post
+          key={post.id}
+          uid={post.uid}
+          text={post.text}
+          image={post.image}
+          postedOn={post.postedOn.toLocaleString()}
+        />
+      ))}
       <ProfileBottom />
     </div>
   );
