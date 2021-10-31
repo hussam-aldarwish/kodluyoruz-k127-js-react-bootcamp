@@ -1,10 +1,13 @@
 import React from 'react'
 import "./RightPane.scss";
+import { useTranslation } from "react-i18next";
+
 export default function HashContainer() {
+    const { t, i18n } = useTranslation();
     return (
         <>
             <div className="hashContainer">
-            <h3>Trends for you</h3>
+            <h3>{t("Trends")}</h3>
             <ul>
                 <li>
                     <p>Politics · Trending</p>

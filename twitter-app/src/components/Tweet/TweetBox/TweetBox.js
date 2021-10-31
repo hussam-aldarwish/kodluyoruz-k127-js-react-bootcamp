@@ -2,10 +2,12 @@ import React from "react";
 import { FiImage, FiSmile } from "react-icons/fi";
 import { AiOutlineFileGif } from "react-icons/ai";
 import { BsCalendar2Event } from "react-icons/bs";
+import { useTranslation } from "react-i18next";
 
 import "./TweetBox.scss";
 
 export default function TweetBox() {
+  const { t, i18n } = useTranslation();
   return (
     <div className="tweet-box" id="tweet-box">
       <form>
@@ -15,7 +17,7 @@ export default function TweetBox() {
             className="avatar"
             alt=""
           />
-          <input placeholder="What's happening?" type="text" />
+          <input placeholder={t("what")} type="text" />
         </div>
         <div className="buttons" >
           <div className="tweet-box-icon">
@@ -32,7 +34,7 @@ export default function TweetBox() {
               style={{ width: "20px", height: "20px", marginLeft: "20px" }}
             />
           </div>
-          <button> Tweet </button>
+          <button> {t("twitte")} </button>
         </div>
       </form>
     </div>
