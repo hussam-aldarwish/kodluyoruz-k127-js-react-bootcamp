@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import { BsChat } from "react-icons/bs";
 import { BiRepost } from "react-icons/bi";
 import { FiHeart, FiUpload } from "react-icons/fi";
@@ -7,7 +7,9 @@ import "./Post.scss";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
-export default function Post({ uid, text, image, postedOn }) {
+import moment from "moment";
+
+function Post({ uid, text, image, postedOn }) {
   const db = getFirestore();
   const storage = getStorage();
   const [url, setUrl] = useState(null);
@@ -26,7 +28,8 @@ export default function Post({ uid, text, image, postedOn }) {
       }
     }
     fetchUser();
-  });
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className="postCont">
@@ -47,7 +50,7 @@ export default function Post({ uid, text, image, postedOn }) {
             </div>
           </div>
           {url && <img src={url} alt="" />}
-          <p>{postedOn}</p>
+          {postedOn && <p>{moment(postedOn).fromNow()}</p>}
           <div className="post-footer">
             <BsChat fontSize="18px" className="message" />
             <BiRepost fontSize="22px" className="retweet" />
@@ -59,3 +62,4 @@ export default function Post({ uid, text, image, postedOn }) {
     </div>
   );
 }
+export default memo(Post);

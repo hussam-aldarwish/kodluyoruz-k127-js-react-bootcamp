@@ -40,7 +40,7 @@ export default function Profile() {
             uid: data.uid,
             text: data.text,
             image: data.image,
-            postedOn: new Date(data.postedOn * 1000),
+            postedOn: new Date(data.postedOn.seconds * 1000),
           });
         });
         setPosts(array.sort((a, b) => b.postedOn - a.postedOn));
