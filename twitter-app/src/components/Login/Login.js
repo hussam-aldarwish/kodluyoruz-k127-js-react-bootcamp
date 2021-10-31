@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Login.scss";
 
 import { RiTwitterFill } from "react-icons/ri";
@@ -22,23 +22,20 @@ export default function Login() {
   const loading = useSelector(selectLoading);
   const error = useSelector(selectLoginError);
   const history = useHistory();
-  const [showError, setShowError] = useState(false);
 
   const {
     register,
-    formState: { errors },
+    formState: { errors, isSubmitted },
     handleSubmit,
   } = useForm();
 
   async function onSubmit(data) {
-    setShowError(true);
     await dispatch(loginAsync(data));
     if (error === null) history.push("/");
   }
 
   return (
     <>
-      
       <div className="login">
         {isMobile && (
           <div className="photo">
@@ -56,7 +53,7 @@ export default function Login() {
             <h2>Join Twitter today.</h2>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            {error && showError ? <span className="errorbar">{error}</span> : null}
+            {error && isSubmitted && <span className="errorbar">{error}</span>}
             <Input
               type="email"
               placeholder="example@example.com"
@@ -69,7 +66,7 @@ export default function Login() {
               error={errors.password}
               {...register("password", { required: true })}
             />
-            
+
             <Input
               type="submit"
               value={!loading ? "Login" : "Loading ..."}

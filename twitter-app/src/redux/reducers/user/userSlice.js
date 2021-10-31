@@ -32,7 +32,9 @@ export const signupAsync = createAsyncThunk(
         email,
         password
       );
-      const { uid } = userCredential.user;
+      const user = userCredential.user;
+      const { uid } = user;
+      const { creationTime } = user.metadata;
       const userRef = doc(db, "users", uid);
       await setDoc(
         userRef,
@@ -44,7 +46,7 @@ export const signupAsync = createAsyncThunk(
         { merge: true }
       );
       dispatch(loadUsersToFollow({ uid: uid, n: 3 }));
-      return { uid, username, email, displayName };
+      return { uid, username, email, displayName, creationTime };
     } catch (error) {
       return rejectWithValue(error.code);
     }
@@ -64,11 +66,12 @@ export const loginAsync = createAsyncThunk(
       );
       const user = userCredential.user;
       const { uid } = user;
+      const { creationTime } = user.metadata;
       const userRef = doc(db, "users", uid);
       const userSnap = await getDoc(userRef);
       const { username, displayName } = userSnap.data();
       dispatch(loadUsersToFollow({ uid: uid, n: 3 }));
-      return { uid, username, email, displayName };
+      return { uid, username, email, displayName, creationTime };
     } catch (error) {
       return rejectWithValue(error.code);
     }
@@ -121,6 +124,7 @@ const userSlice = createSlice({
       state.loading = true;
       state.loginError = null;
       state.signupError = null;
+      state.usersToFollow = [];
     },
     [signupAsync.fulfilled]: (state, action) => {
       state.loading = false;
@@ -137,6 +141,7 @@ const userSlice = createSlice({
       state.loading = true;
       state.loginError = null;
       state.signupError = null;
+      state.usersToFollow = [];
     },
     [loginAsync.fulfilled]: (state, action) => {
       state.loading = false;

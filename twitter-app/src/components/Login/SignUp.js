@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Login.scss";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,8 +18,6 @@ import {
 export default function SignUp() {
   const isMobile = useMediaQuery({ minWidth: 600 });
 
-  const [showError, setShowError] = useState(false);
-
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
   const error = useSelector(selectSignupError);
@@ -27,19 +25,17 @@ export default function SignUp() {
 
   const {
     register,
-    formState: { errors },
+    formState: { errors, isSubmitted },
     handleSubmit,
   } = useForm();
 
-  const onsubmit = async (data) => {
-    setShowError(true);
+  async function onSubmit(data) {
     await dispatch(signupAsync(data));
     if (error === null) history.push("/");
-  };
+  }
 
   return (
     <>
-      {error && showError ? <span>{error}</span> : null}
       <div className="login">
         {isMobile && (
           <div className="photo">
@@ -56,7 +52,8 @@ export default function SignUp() {
             <h1>Happening now</h1>
             <h2>Join Twitter today.</h2>
           </div>
-          <form onSubmit={handleSubmit(onsubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            {error && isSubmitted && <span className="errorbar">{error}</span>}
             <Input
               type="text"
               placeholder="Display Name"
