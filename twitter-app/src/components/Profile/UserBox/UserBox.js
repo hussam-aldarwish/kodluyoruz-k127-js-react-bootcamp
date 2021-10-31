@@ -1,8 +1,13 @@
 import React from "react";
 import "./UserBox.scss";
 import { BiCalendar } from "react-icons/bi";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../../redux/reducers/user";
 
 export default function UserBox() {
+  const user = useSelector(selectUser);
+  const JoinedMonth = new Date(user?.creationTime).getMonth() + 1;
+  const JoinedYear = new Date(user?.creationTime).getFullYear();
   return (
     <div className="user-box">
       <div className="user-img">
@@ -19,11 +24,12 @@ export default function UserBox() {
         <button> Edit profile</button>
       </div>
       <div className="user-details">
-        <h3 style={{ marginBottom: "0px", color: "white" }}> Kodluyoruz </h3>
-        <span style={{ marginTop: "0px" }}> @kodluyoruz </span>
+        <h3 style={{ marginBottom: "0px", color: "white" }}>
+          {user.displayName}
+        </h3>
+        <span style={{ marginTop: "0px" }}>{user.username}</span>
         <span>
-          {" "}
-          <BiCalendar /> Joined September 2021{" "}
+          <BiCalendar /> Joined {JoinedMonth} {JoinedYear}
         </span>
         <div className="follow">
           <b style={{ color: "white" }}> 0 </b> <span> Following</span>

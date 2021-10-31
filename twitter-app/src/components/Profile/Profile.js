@@ -8,17 +8,25 @@ import ProfileBottom from "./ProfileBottom";
 import UserBox from "./UserBox";
 import Post from "../Tweet/Post/Post";
 
+import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../redux/reducers/user";
+
 export default function Profile() {
   const isDesktop = useMediaQuery({ maxWidth: 600 });
+  const history = useHistory();
+  const user = useSelector(selectUser);
   return (
     <div className="profile">
       <div className="profile-header">
         <div className="icon-div">
-          <BsArrowLeftShort className="icon" />
+          <BsArrowLeftShort className="icon" onClick={() => history.goBack()} />
         </div>
         <div className="username">
-          <h3 style={{ marginBottom: "2px", marginTop: "3px" }}>Kodluyoruz</h3>
-          <span> 0 Tweet </span>
+          <h3 style={{ marginBottom: "2px", marginTop: "3px" }}>
+            {user?.displayName}
+          </h3>
+          <span>0 Tweet</span>
         </div>
         {isDesktop && (
           <Link to="/login">
