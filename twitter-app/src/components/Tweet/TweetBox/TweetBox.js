@@ -10,14 +10,10 @@ export default function TweetBox() {
     <div className="tweet-box" id="tweet-box">
       <form>
         <div className="tweet-box-input">
-          <img
-            src="https://pbs.twimg.com/profile_images/1404339457868902404/QrUcR8so_400x400.jpg"
-            className="avatar"
-            alt=""
-          />
+          <img src="/tweet.png" className="avatar" alt="" />
           <input placeholder="What's happening?" type="text" />
         </div>
-        <div className="buttons" >
+        <div className="buttons">
           <div className="tweet-box-icon">
             <FiImage
               style={{ width: "20px", height: "20px", marginLeft: "70px" }}
