@@ -11,6 +11,11 @@
   .eserDes {
     width: -webkit-fill-available;
     overflow: hidden;
+    span {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
     * {
       margin: 0 10px;
     }
@@ -24,8 +29,8 @@
     cursor: pointer;
   }
 }
-html[theme="light"]{
-    .logout{
-        background: $hoverColorligt;
-    }
+html[theme="light"] {
+  .logout {
+    background: $hoverColorligt;
+  }
 }

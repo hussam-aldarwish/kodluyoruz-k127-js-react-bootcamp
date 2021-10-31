@@ -20,9 +20,9 @@ export default function LeftPane() {
   const isMobile = useMediaQuery({ minWidth: 600 });
   const isTablet = useMediaQuery({ minWidth: 1260 });
   const isMobilm = useMediaQuery({ maxWidth: 600 });
+  const { t, i18n } = useTranslation();
 
   const { toggleTheme } = useContext(ThemeContext);
-  const { t, i18n } = useTranslation();
   const [more, setmore] = useState("false");
   const [moreMobile, setmoreMobile] = useState("false");
   return (
@@ -34,12 +34,6 @@ export default function LeftPane() {
             <li>
               <HomeIcone />
               {isTablet && <p>{t("home")}</p>}
-            </li>
-          </NavLink>
-          <NavLink to="/Search" activeClassName="activeClass">
-            <li>
-              <FiSearch />
-              {isTablet && <p>{t("search")}</p>}
             </li>
           </NavLink>
           <NavLink to="/Profile" activeClassName="activeClass">

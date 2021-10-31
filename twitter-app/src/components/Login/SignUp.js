@@ -3,6 +3,7 @@ import "./Login.scss";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { RiTwitterFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
@@ -17,12 +18,13 @@ import {
 
 export default function SignUp() {
   const isMobile = useMediaQuery({ minWidth: 600 });
-
+  const { t, i18n } = useTranslation();
+  
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
   const error = useSelector(selectSignupError);
   const history = useHistory();
-
+  
   const {
     register,
     formState: { errors, isSubmitted },
@@ -88,7 +90,7 @@ export default function SignUp() {
               disabled={loading ? true : false}
             />
             <span>
-              Already have an account?<Link to="/login"> login</Link>
+              {t("Already have an account?")}<Link to="/login"> {t("login")}</Link>
             </span>
           </form>
         </div>

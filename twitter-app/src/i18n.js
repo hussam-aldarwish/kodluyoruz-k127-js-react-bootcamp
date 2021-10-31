@@ -15,24 +15,46 @@ const resources = {
       "Who": "Who to follow",
       "twitte": "twitte",
       "Theme": "Theme",
+      "Edit": "Edit Profile",
+      "Joined": "Joined",
+      "Following": "Following",
+      "Followers": "Followers",
+      "Sign Up": "Sign Up",
+      "Already have an account?": "Already have an account?",
+      "Don’t have an account?": "Don’t have an account?",
+      "auth/wrong-password": "wrong password!",
+      "login": "login",
+      "auth/user-not-found": "user not found",
+      "auth/too-many-requests": "too many requests",
     }
-},
-tr: {
+  },
+  tr: {
     translation: {
-        "home": "Ana sayfa",
-        "search": "Ara",
-        "Profile": "Profil",
-        "More": "Daha",
-        "what": "Ne oluyor?",
-        "Trends": "İlgini çekebilecek gündemler",
-        "Who": "Kimi takip etmeli",
-        "twitte": "tweetle",
-        "Theme": "Teme",
+      "home": "Ana sayfa",
+      "search": "Ara",
+      "Profile": "Profil",
+      "More": "Daha",
+      "what": "Ne oluyor?",
+      "Trends": "İlgini çekebilecek gündemler",
+      "Who": "Kimi takip etmeli",
+      "twitte": "tweetle",
+      "Theme": "Teme",
+      "Edit": "Düzenle",
+      "Joined": "tarihinde katıldı",
+      "Following": "Takipçi",
+      "Followers": "Takip edilen",
+      "Sign Up": "Kayıt ol",
+      "Already have an account?": "Zaten hesabınız var mı?",
+      "Don’t have an account?": "hesabın yok?",
+      "auth/wrong-password": "yanlış şifre!",
+      "login": "Giriş yap",
+      "auth/user-not-found": "Kullanıcı bulunamadı",
+      "auth/too-many-requests": "çok fazla istek",
     }
   }
 };
 i18n
-  .use(initReactI18next)
+.use(initReactI18next)
   .init({
     resources,
     lng: "en", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources

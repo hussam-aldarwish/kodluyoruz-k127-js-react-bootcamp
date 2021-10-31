@@ -7,6 +7,7 @@ import "./Profile.scss";
 import ProfileBottom from "./ProfileBottom";
 import UserBox from "./UserBox";
 import Post from "../Tweet/Post/Post";
+import { useTranslation } from "react-i18next";
 
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -26,6 +27,7 @@ export default function Profile() {
   const isDesktop = useMediaQuery({ maxWidth: 1259 });
   const history = useHistory();
   const user = useSelector(selectUser);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const unsubscribe = onSnapshot(
@@ -60,7 +62,7 @@ export default function Profile() {
           <h3 style={{ marginBottom: "2px", marginTop: "3px" }}>
             {user?.displayName}
           </h3>
-          <span>{posts.length} Tweet</span>
+          <span>{posts.length}tweet</span>
         </div>
         {isDesktop && (
           <Link to="/login">

@@ -14,9 +14,10 @@ import {
   loginAsync,
 } from "../../redux/reducers/user";
 import Input from "../Input";
-
+import { useTranslation } from "react-i18next";
 export default function Login() {
   const isMobile = useMediaQuery({ minWidth: 600 });
+  const { t, i18n } = useTranslation();
 
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
@@ -53,7 +54,7 @@ export default function Login() {
             <h2>Join Twitter today.</h2>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            {error && isSubmitted && <span className="errorbar">{error}</span>}
+            {error && isSubmitted && <span className="errorbar">{t(error)}</span>}
             <Input
               type="email"
               placeholder="example@example.com"
@@ -66,14 +67,13 @@ export default function Login() {
               error={errors.password}
               {...register("password", { required: true })}
             />
-
             <Input
               type="submit"
               value={!loading ? "Login" : "Loading ..."}
               disabled={loading ? true : false}
             />
             <span>
-              Don’t have an account?<Link to="/SignUp"> Sign Up</Link>
+              {t("Don’t have an account?")}<Link to="/SignUp"> {t("Sign Up")}</Link>
             </span>
           </form>
         </div>

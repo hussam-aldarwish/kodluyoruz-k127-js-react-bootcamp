@@ -3,11 +3,14 @@ import "./UserBox.scss";
 import { BiCalendar } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../../redux/reducers/user";
+import { useTranslation } from "react-i18next";
 
 export default function UserBox() {
   const user = useSelector(selectUser);
   const JoinedMonth = new Date(user?.creationTime).getMonth() + 1;
   const JoinedYear = new Date(user?.creationTime).getFullYear();
+
+  const { t, i18n } = useTranslation();
   return (
     <div className="user-box">
       <div className="user-img">
@@ -21,7 +24,7 @@ export default function UserBox() {
           className="profileAvatar"
           alt="twitter"
         />
-        <button> Edit profile</button>
+        <button>{t("Edit")}</button>
       </div>
       <div className="user-details">
         <h3 style={{ marginBottom: "0px", color: "white" }}>
@@ -29,11 +32,11 @@ export default function UserBox() {
         </h3>
         <span style={{ marginTop: "0px" }}>{user.username}</span>
         <span>
-          <BiCalendar /> Joined {JoinedMonth} {JoinedYear}
+          <BiCalendar /> {t("Joined")} {JoinedMonth} {JoinedYear}
         </span>
         <div className="follow">
-          <b style={{ color: "white" }}> 0 </b> <span> Following</span>
-          <b style={{ color: "white" }}> 0 </b> <span> Followers</span>
+          <b style={{ color: "white" }}> 0 </b> <span> {t("Following")}</span>
+          <b style={{ color: "white" }}> 0 </b> <span> {t("Followers")}</span>
         </div>
       </div>
       <div className="detail-bottom">
