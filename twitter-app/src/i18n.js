@@ -20,9 +20,13 @@ const resources = {
       Edit: "Edit Profile",
       Following: "Following",
       Followers: "Followers",
+      "Happening now":"Happening now",
+      "Join Twitter today.":"Join Twitter today.",
       "Already have an account?": "Already have an account?",
       "Don’t have an account?": "Don’t have an account?",
       "auth/wrong-password": "wrong password!",
+      "auth/user-not-found": "user not found",
+      "auth/too-many-requests": "too many requests",
       errors: {
         "auth/user-not-found": "user not found",
         "auth/too-many-requests": "too many requests",
@@ -63,6 +67,8 @@ const resources = {
       Edit: "Düzenle",
       Following: "Takipçi",
       Followers: "Takip edilen",
+      "Happening now":"Şimdi oluyor",
+      "Join Twitter today.":"Bugün Twitter'a katıl.",
       "Sign Up": "Kayıt ol",
       "Already have an account?": "Zaten hesabınız var mı?",
       "Don’t have an account?": "hesabın yok?",
@@ -93,15 +99,16 @@ const resources = {
 };
 
 i18n
-  .use(I18nextBrowserLanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources,
-    fallbackLng: "en",
+.use(I18nextBrowserLanguageDetector)
+.use(initReactI18next)
+.init({
+  resources,
+  fallbackLng: "en",
     debug: process.env.NODE_ENV === "development",
     interpolation: {
       escapeValue: false,
     },
   });
-
-export default i18n;
+  
+  export default i18n;
+  

@@ -50,8 +50,8 @@ export default function Login() {
         <div className="formCont">
           <div className="formHade">
             <RiTwitterFill />
-            <h1>Happening now</h1>
-            <h2>Join Twitter today.</h2>
+            <h1>{t("Happening now")}</h1>
+            <h2>{t("Join Twitter today.")}</h2>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             {error && isSubmitted && (

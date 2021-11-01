@@ -51,8 +51,8 @@ export default function SignUp() {
         <div className="formCont">
           <div className="formHade">
             <RiTwitterFill />
-            <h1>Happening now</h1>
-            <h2>Join Twitter today.</h2>
+            <h1>{t("Happening now")}</h1>
+            <h2>{t("Join Twitter today.")}</h2>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             {error && isSubmitted && <span className="errorbar">{error}</span>}
@@ -91,7 +91,7 @@ export default function SignUp() {
             />
             <span>
               {t("Already have an account?")}
-              <Link to="/login"> {t("login")}</Link>
+              <Link to="/login">{t("login")}</Link>
             </span>
           </form>
         </div>
