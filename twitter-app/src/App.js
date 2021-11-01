@@ -1,21 +1,31 @@
-import React from "react";
-import "./App.scss";
-import LeftPane from "./components/leftPane/LeftPane";
-import Rightpane from "./components/rigtePane/Rightpane";
-import Tweet from "./components/Tweet";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { useSelector } from "react-redux";
-import { selectTheme } from "./redux/reducers/theme";
+import { ThemeContext } from "./contexts/ThemeContext";
+import Routes from "./routes";
+
+import "./App.scss";
 
 function App() {
-  const theme = useSelector(selectTheme);
+  const [theme, setTheme] = useState(() => {
+    let theme = localStorage.getItem("theme");
+    return theme ? theme : "light";
+  });
+
+  function toggleTheme() {
+    setTheme(theme === "light" ? "dark" : "light");
+  }
+
+  useEffect(() => {
+    if (theme) localStorage.setItem("theme", theme);
+  }, [theme]);
+
   return (
-    <div className="App">
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <Helmet htmlAttributes={{ theme: theme }} />
-      <LeftPane />
-      <Tweet />
-      <Rightpane />
-    </div>
+      <div className="App">
+        <Routes />
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

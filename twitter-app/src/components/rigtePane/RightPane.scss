@@ -1,3 +1,4 @@
+@import "../../App.scss";
 .Rightpane{
     display: flex;
     flex-direction: column;
@@ -9,7 +10,7 @@
         top: 15px;
         display: flex;
         flex-direction: column;
-        background: rgba(21, 24, 28,1);
+        background: $background2;
         min-width: 350px;
         max-height: 480px;
         min-height: auto;
@@ -32,7 +33,7 @@
                 padding: 5px 15px 5px 15px;
                 cursor: pointer;
                 &:hover{
-                    background: rgb(38, 41, 46);
+                    background: rgba(253, 253, 253, 0.041);
                 }
                 svg{
                     width: 25px;
@@ -69,4 +70,22 @@
             min-width: 290px;
         }
     }
+}
+html[theme="light"]{
+  .hashContainer{
+      background: $borderColorlight;
+      p{
+          color: rgb(83, 100, 113) !important;
+      }
+      .followList{
+          svg{
+              color: $backgroundLight;
+          }
+      }
+  }
+  
+  .Rightpane .hashContainer ul li:hover {
+        background: $hoverColorligt;
+      }
+  
 }

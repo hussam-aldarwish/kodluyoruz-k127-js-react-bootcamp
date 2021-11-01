@@ -10,7 +10,7 @@ export default function createStore(history) {
   const persistConfig = {
     key: "twitter-app",
     storage,
-    blacklist: ["router"],
+    blacklist: ["router", "tweet"],
   };
 
   const rootReducer = combineReducers({
@@ -25,6 +25,7 @@ export default function createStore(history) {
   const store = configureStore({
     reducer: persistedReducer,
     middleware: middleware,
+    devTools: process.env.NODE_ENV === "development",
   });
 
   const persistor = persistStore(store);

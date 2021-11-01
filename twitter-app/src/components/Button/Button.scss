@@ -1,6 +1,6 @@
 @import '../../App.scss','../leftPane/LeftPane.scss';
-$hoverColor:rgb(0 104 173);
-button{
+
+.tweetButton{
     @media only screen and (max-width: 600px){
         img{
             display: block;
@@ -17,6 +17,6 @@ button{
     color: $fontColor;
     transition: $transitionNormal;
     &:hover{
-        background: $hoverColor;
+        background: rgb(23 136 213);
     }
 }
