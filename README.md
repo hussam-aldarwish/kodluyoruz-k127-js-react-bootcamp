@@ -29,8 +29,8 @@
 
 ### Contributors:
 * [**HUSSAM ALDADRWISH**](https://github.com/hussam-aldarwish)  
-* [**Uzuk Bakyyeva**](https://github.com/bakyyeva)  
 * [**Abdullah Ahmad**](https://github.com/abdulahhamad)  
+* [**Uzuk Bakyyeva**](https://github.com/bakyyeva)  
 * [**Feras Hajjar**](https://github.com/Feras190)  
 * [**Muhammad Manar**](https://github.com/manar21abc)  
 
