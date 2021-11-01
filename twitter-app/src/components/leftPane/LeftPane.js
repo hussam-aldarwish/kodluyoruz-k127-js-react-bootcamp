@@ -5,7 +5,6 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useMediaQuery } from "react-responsive";
-import { FiSearch } from "react-icons/fi";
 import { CgMoreO } from "react-icons/cg";
 import { RiTwitterFill } from "react-icons/ri";
 import { HiOutlineUser } from "react-icons/hi";

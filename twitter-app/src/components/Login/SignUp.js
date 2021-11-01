@@ -18,13 +18,13 @@ import {
 
 export default function SignUp() {
   const isMobile = useMediaQuery({ minWidth: 600 });
-  const { t, i18n } = useTranslation();
-  
+  const { t } = useTranslation();
+
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
   const error = useSelector(selectSignupError);
   const history = useHistory();
-  
+
   const {
     register,
     formState: { errors, isSubmitted },
@@ -86,11 +86,12 @@ export default function SignUp() {
             />
             <Input
               type="submit"
-              value={!loading ? "Signup" : "Loading ..."}
+              value={!loading ? t("signup") : t("loading...")}
               disabled={loading ? true : false}
             />
             <span>
-              {t("Already have an account?")}<Link to="/login"> {t("login")}</Link>
+              {t("Already have an account?")}
+              <Link to="/login"> {t("login")}</Link>
             </span>
           </form>
         </div>

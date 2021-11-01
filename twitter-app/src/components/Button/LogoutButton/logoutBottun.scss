@@ -11,7 +11,8 @@
   .eserDes {
     width: -webkit-fill-available;
     overflow: hidden;
-    span {
+    span,
+    h3 {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;

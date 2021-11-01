@@ -7,10 +7,11 @@ import { useTranslation } from "react-i18next";
 
 export default function UserBox() {
   const user = useSelector(selectUser);
+  const { t } = useTranslation();
+
   const JoinedMonth = new Date(user?.creationTime).getMonth() + 1;
   const JoinedYear = new Date(user?.creationTime).getFullYear();
 
-  const { t, i18n } = useTranslation();
   return (
     <div className="user-box">
       <div className="user-img">
@@ -32,7 +33,11 @@ export default function UserBox() {
         </h3>
         <span style={{ marginTop: "0px" }}>{user.username}</span>
         <span>
-          <BiCalendar /> {t("Joined")} {JoinedMonth} {JoinedYear}
+          <BiCalendar />
+          {t("joined", {
+            JoinedMonth: t(`months.${JoinedMonth}`),
+            JoinedYear: JoinedYear,
+          })}
         </span>
         <div className="follow">
           <b style={{ color: "white" }}> 0 </b> <span> {t("Following")}</span>

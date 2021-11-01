@@ -17,7 +17,7 @@ import Input from "../Input";
 import { useTranslation } from "react-i18next";
 export default function Login() {
   const isMobile = useMediaQuery({ minWidth: 600 });
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
@@ -54,7 +54,9 @@ export default function Login() {
             <h2>Join Twitter today.</h2>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            {error && isSubmitted && <span className="errorbar">{t(error)}</span>}
+            {error && isSubmitted && (
+              <span className="errorbar">{t(error)}</span>
+            )}
             <Input
               type="email"
               placeholder="example@example.com"
@@ -69,11 +71,12 @@ export default function Login() {
             />
             <Input
               type="submit"
-              value={!loading ? "Login" : "Loading ..."}
+              value={!loading ? t("login") : t("loading")}
               disabled={loading ? true : false}
             />
             <span>
-              {t("Don’t have an account?")}<Link to="/SignUp"> {t("Sign Up")}</Link>
+              {t("Don’t have an account?")}
+              <Link to="/SignUp"> {t("signup")}</Link>
             </span>
           </form>
         </div>

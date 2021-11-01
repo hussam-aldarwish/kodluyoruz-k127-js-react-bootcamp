@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export default function Button() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const history = useHistory();
   const isTablet = useMediaQuery({ minWidth: 1260 });
   const isTabletx = useMediaQuery({ maxWidth: 1260 });
