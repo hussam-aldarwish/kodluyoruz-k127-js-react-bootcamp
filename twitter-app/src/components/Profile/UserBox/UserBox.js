@@ -21,7 +21,7 @@ export default function UserBox() {
           alt="twitter"
         />
         <img
-          src="https://pbs.twimg.com/profile_images/1453002556205146125/uWb5vs19_200x200.jpg"
+          src="https://freesvg.org/img/abstract-user-flat-4.png"
           className="profileAvatar"
           alt="twitter"
         />
