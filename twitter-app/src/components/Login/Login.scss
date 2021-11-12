@@ -35,7 +35,7 @@
     justify-content: center;
     padding-left: 50px;
     width: 45%;
-    margin-top: 10%;
+    margin-top: 30px;
     svg {
         width: 50px;
         height: auto;
@@ -45,6 +45,7 @@
             font-family: "karla", sans-serif;
             font-weight: bold;
             font-size: 5rem !important;
+            margin-top: 0;
             @media screen and (max-width: 600px) {
                 font-size: 2.5rem !important;
                 width: max-content;
