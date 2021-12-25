@@ -31,8 +31,7 @@
 * [**HUSSAM ALDADRWISH**](https://github.com/hussam-aldarwish)  
 * [**Abdullah Ahmad**](https://github.com/abdulahhamad)  
 * [**Uzuk Bakyyeva**](https://github.com/bakyyeva)  
-* [**Feras Hajjar**](https://github.com/Feras190)  
-* [**Muhammad Manar**](https://github.com/manar21abc)  
+
 
 **Eğitmen:** [**Enes Öztürk**](https://github.com/enesozturk)  
 **Thanks to** [**KODLUYORUZ**](https://www.kodluyoruz.org)  
