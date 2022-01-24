@@ -10,7 +10,7 @@
     "connected-react-router": "^6.9.1",
     "firebase": "^9.6.4",
     "history": "4.10.1",
-    "i18next": "^21.6.6",
+    "i18next": "^21.6.7",
     "i18next-browser-languagedetector": "^6.1.2",
     "icons": "^1.0.0",
     "jsx": "^0.9.89",
