@@ -1,0 +1,22 @@
+.chat-header {
+  display: flex;
+  padding: 12px 24px;
+  border-bottom: 1px solid #b3b3b3;
+  min-height: 72px;
+  align-items: center;
+  overflow: hidden;
+}
+.chat-header .user-img {
+  margin-inline-end: 16px;
+}
+.chat-header .user-name {
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.chat-header .user-info-button {
+  font-size: 20px;
+  letter-spacing: 5px;
+  font-weight: 600;
+}

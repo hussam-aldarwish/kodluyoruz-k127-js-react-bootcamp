@@ -1,0 +1,10 @@
+.search-container {
+  padding: 8px 16px;
+}
+.search-container .input-container {
+  margin-bottom: 0px;
+}
+.search-container input {
+  border: 1px solid;
+  border-color: black;
+}

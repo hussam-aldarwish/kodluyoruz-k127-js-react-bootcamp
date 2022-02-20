@@ -1,0 +1,13 @@
+.input-message-from {
+  display: flex;
+  padding: 16px;
+  gap: 8px;
+  border-top: solid 1px #b3b3b3;
+}
+.input-message-from .input-container {
+  margin: 0px;
+}
+.input-message-from input[type="submit"] {
+  max-width: 5rem;
+  padding: 16px;
+}

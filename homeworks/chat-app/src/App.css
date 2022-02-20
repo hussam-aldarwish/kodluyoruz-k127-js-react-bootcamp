@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container[theme="dark"] {
+  background-color: #6a6a6a;
+  color: white;
+}
+
+.primary {
+  background-color: #68b7ff;
+  color: white;
+}
+[theme="dark"] .primary {
+  background-color: #4d8dc8;
+  color: white;
+}
+
+.secondary {
+  background-color: #f2f2f2;
+  color: black;
+}
+[theme="dark"] .secondary {
+  background-color: #515151;
+  color: white;
+}

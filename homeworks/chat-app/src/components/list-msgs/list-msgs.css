@@ -1,0 +1,19 @@
+.messages-container {
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex:1
+}
+
+.messages-container .message-entry {
+  width: 50%;
+  margin: 8px 0;
+  padding: 16px;
+  max-width: 50%;
+  border-radius: 5px;
+}
+.messages-container .message-entry.primary {
+  align-self: end;
+}
