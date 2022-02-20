@@ -1,10 +1,8 @@
 # Twitter Clone App
 
-## Demo Link
-#### To see this repo please [**Click here**](https://twitter-clone-kodluyoruz.netlify.app)
+#### Demonstration link: [**Twitter Clone - Kodluyoruz**](https://twitter-clone-kodluyoruz.netlify.app)
 
----  
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9cb8f8ed-fbd7-47a8-9edf-5d674350c340/deploy-status)](https://app.netlify.com/sites/twitter-clone-kodluyoruz/deploys)  
+
 
 ## Built With
 
