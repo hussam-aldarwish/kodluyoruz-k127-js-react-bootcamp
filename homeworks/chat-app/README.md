@@ -1,7 +1,7 @@
 # kodluyoruz-127-chat-app
 
 K127. İstanbul JavaScript&amp;React Bootcamp - Homework-2: chat-app
-#### Demonstration link: [**Chat App - Kodluyoruz**](https://chat-app-hussam-aldarwish.netlify.app)  
+#### Demonstration link: [**Chat App - Kodluyoruz**](https://chat-app-hussam-aldarwish.vercel.app/)  
   
   
 ![screencapture-chat2-app-hussam-aldarwish-netlify-app-2021-10-08-06_15_40](https://user-images.githubusercontent.com/90006627/136492740-98f7bb42-ec70-4a1a-ac0f-0c10c44998e2.png)  

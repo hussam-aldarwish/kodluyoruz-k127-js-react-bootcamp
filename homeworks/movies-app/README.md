@@ -1,6 +1,6 @@
 # movies-app
 
-#### Demonstration link: [**Movies App - Kodluyoruz Homework 1**](https://movies-app-hussam-aldarwish.netlify.app)
+#### Demonstration link: [**Movies App - Kodluyoruz Homework 1**](https://movies-app-hussam-aldarwish.vercel.app)
 
 ![screencapture-movies-app-hussam-aldarwish-netlify-app-2021-09-23-10_16_18](https://user-images.githubusercontent.com/90006627/134468165-8235edc3-dd51-4bcb-86a0-64d6c40b8d73.png)
 
