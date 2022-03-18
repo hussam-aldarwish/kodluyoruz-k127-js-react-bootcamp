@@ -3,7 +3,7 @@
 This repository demonstrates kodluyoruz-k127-js-react bootcamp files
 
 - Course repository: [Link](https://github.com/kodluyoruz-js-react-bootcamp-127/course)
-- Homeworks: [Link](https://github.com/kodluyoruz-js-react-bootcamp-127/course)
+- Homeworks: [Link](https://github.com/hussam-aldarwish/kodluyoruz-k127-js-react-bootcamp/tree/main/homeworks)
 
 ### This bootcamp has covered:
 
